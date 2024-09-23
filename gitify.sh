@@ -8,7 +8,7 @@ email="clement.jean.l.faye@gmail.com"
 # Adds a 1 second cooldown...
 log() {
     echo -e "$1"
-    sleep 1
+    sleep .5
 }
 
 # Checks if there is already a username and email in configuration...
