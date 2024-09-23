@@ -10,25 +10,57 @@ pub fn pro(a: i8, b: i8) -> i8 {
     a * b
 }
 
-pub fn quo(a: i32, b: i32) -> i32 {
+pub fn quo(a: f32, b: f32) -> f32 {
     a / b
 }
 
-pub fn rem(a: i32, b: i32) -> i32 {
+pub fn rem(a: f32, b: f32) -> f32 {
     a % b
 }
 
+/////////////////////////////////////////////////////
 
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn it_works() {
-        assert_eq!(sum(2, 2), 4);
-        assert_eq!(diff(3, 9), -6);
-        assert_eq!(pro(2, 2), 4);
-        assert_eq!(quo(15, 5), 3);
-        assert_eq!(rem(14, 2), 0);
+    #[should_panic]
+    fn test_panic_sum() {
+        sum(25, 255);
     }
+
+    #[test]
+    #[should_panic]
+    fn test_panic_diff() {
+        diff(-32768, 32766);
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_panic_pro() {
+        pro(-128, 2);
+    }
+
+    // #[test]
+    // #[should_panic]
+    // fn test_panic_quo() {
+    //     quo(-128.0, 2.0);
+    // }
+
+    // #[test]
+    // #[should_panic]
+    // fn test_panic_rem() {
+    //     rem(, 6);
+    // }
+
+    #[test]
+    fn pass() {
+        assert_eq!(sum(1, 2), 3);
+        assert_eq!(diff(1, 2), -1);
+        assert_eq!(pro(1, 2), 2);
+        assert_eq!(quo(1.0, 2.0), 0.5);
+        assert_eq!(rem(1.0, 2.0), 1.0);
+    }
+
 }
