@@ -11,7 +11,7 @@ fn main() {
         io::stdin().read_line(&mut input).unwrap();
 
         if input.trim() == &answer {
-            println!("Number of trials: {trials}", trials);
+            println!("Number of trials: {trials}");
             break;
         };
 
