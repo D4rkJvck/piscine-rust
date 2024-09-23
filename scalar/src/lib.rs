@@ -42,18 +42,6 @@ mod tests {
         pro(-128, 2);
     }
 
-    // #[test]
-    // #[should_panic]
-    // fn test_panic_quo() {
-    //     quo(-128.0, 2.0);
-    // }
-
-    // #[test]
-    // #[should_panic]
-    // fn test_panic_rem() {
-    //     rem(, 6);
-    // }
-
     #[test]
     fn pass() {
         assert_eq!(sum(1, 2), 3);
