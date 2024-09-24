@@ -1,5 +1,4 @@
 [workspace]
-resolver = "2"
 members = [
     "scalar",
     "temperature_conv",
@@ -10,5 +9,7 @@ members = [
     "find_factorial",
     "fibonacci2",
     "matrix_transposition",
-    "division_and_remainder"
+    "division_and_remainder",
+    "tuples_refs",
 ]
+resolver = "2"

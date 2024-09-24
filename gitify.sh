@@ -1,6 +1,6 @@
 #!/bin/bash
 
-desired_branch="master"
+desired_branch="main"
 username="jefaye"
 email="clement.jean.l.faye@gmail.com"
 
@@ -75,7 +75,7 @@ commit_and_push() {
     read -r -p "Enter Commit Message: " commit_message
     git commit -a -m "$commit_message"
     git push origin "$desired_branch"
-    # git push mirror "$desired_branch"
+    git push mirror "$desired_branch"
 
     log "Well done!"
 }
