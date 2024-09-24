@@ -13,5 +13,4 @@ mod tests {
         assert_eq!(km_per_hour_to_meters_per_second(10.0), 2.7777777777777777);
         assert_eq!(km_per_hour_to_meters_per_second(100.0), 27.77777777777778);
     }
-    
 }

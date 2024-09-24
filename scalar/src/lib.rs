@@ -50,5 +50,4 @@ mod tests {
         assert_eq!(quo(1.0, 2.0), 0.5);
         assert_eq!(rem(1.0, 2.0), 1.0);
     }
-
 }

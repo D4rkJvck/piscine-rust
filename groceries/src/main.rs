@@ -1,4 +1,4 @@
-use groceries::{ insert, at_index };
+use groceries::{at_index, insert};
 
 fn main() {
     let mut groceries = vec![
