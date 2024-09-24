@@ -11,5 +11,6 @@ members = [
     "matrix_transposition",
     "division_and_remainder",
     "tuples_refs",
+    "borrow",
 ]
 resolver = "2"
