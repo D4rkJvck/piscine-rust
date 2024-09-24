@@ -1,16 +1,10 @@
 [workspace]
 members = [
-    "scalar",
-    "temperature_conv",
-    "speed_transformation",
-    "looping",
-    "groceries",
-    "reverse_string",
-    "find_factorial",
-    "fibonacci2",
-    "matrix_transposition",
-    "division_and_remainder",
-    "tuples_refs",
-    "borrow", "doubtful", "to_url", "string_literals", "name_initials",
+    "borrow",
+    "doubtful",
+    "to_url",
+    "string_literals",
+    "name_initials",
+    "ownership",
 ]
 resolver = "2"
