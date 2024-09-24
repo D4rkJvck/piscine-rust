@@ -30,11 +30,16 @@ fn signed_remove(s: &mut String) {
     let mut idx = 0;
 
     while idx < s.len() {
-        while s.chars().nth(idx).unwrap() == '-' {
+        while s.chars().nth(idx).unwrap_or_default() == '-' {
             s.remove(idx);
-            s.remove(idx - 1);
-            idx -= 1;
+
+            if idx > 0 {
+                s.remove(idx - 1);   
+                idx -= 1;
+            }
+
         }
+
         idx += 1;
     }
 
