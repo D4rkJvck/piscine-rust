@@ -31,5 +31,9 @@ name = "string_literals"
 version = "0.1.0"
 
 [[package]]
+name = "tic_tac_toe"
+version = "0.1.0"
+
+[[package]]
 name = "to_url"
 version = "0.1.0"
