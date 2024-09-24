@@ -5,6 +5,6 @@ members = [
     "to_url",
     "string_literals",
     "name_initials",
-    "ownership",
+    "ownership", "copy",
 ]
 resolver = "2"
