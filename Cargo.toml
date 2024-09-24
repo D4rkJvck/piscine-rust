@@ -11,6 +11,6 @@ members = [
     "matrix_transposition",
     "division_and_remainder",
     "tuples_refs",
-    "borrow", "doubtful", "to_url", "string_literals",
+    "borrow", "doubtful", "to_url", "string_literals", "name_initials",
 ]
 resolver = "2"
