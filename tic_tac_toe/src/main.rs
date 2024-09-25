@@ -13,6 +13,15 @@ fn main() {
     println!(
         "{:?}",
         tic_tac_toe(vec![
+            vec!["O", "X", "O"],
+            vec!["O", "O", "X"],
+            vec!["X", "X", "X"]
+        ])
+    );
+
+    println!(
+        "{:?}",
+        tic_tac_toe(vec![
             vec!["X", "O", "O"],
             vec!["X", "O", "O"],
             vec!["#", "O", "X"]
