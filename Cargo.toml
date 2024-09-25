@@ -1,4 +1,4 @@
 [workspace]
-members = ["changes"
+members = [ "card_deck","changes"
 , "circle"]
 resolver = "2"
