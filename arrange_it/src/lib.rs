@@ -1,14 +1,18 @@
+#[allow(unused)]
 pub fn arrange_phrase(phrase: &str) -> String {
-    let mut arranged_phrase = String::new();
-    let words: Vec<&str> = phrase.split_whitespace().collect();
+    let mut idx = 1;
+    let mut words: Vec<&str> = phrase.split_whitespace().collect();
 
-    for i in 1..words.len() + 1 {
-        words.iter().map(|word| {
-            if word.contains(stringify!(i) {
-                words.swap(a, b);
-            };
-    }));
+    for i in 0..words.len() {
+        while words[i].contains(idx.to_string().as_str()) {
+            &mut words.swap(i, idx - 1);
+            idx += 1;
+        }
     }
 
-    arranged_phrase
+    words
+        .join(" ")
+        .chars()
+        .filter(|c| !c.is_digit(10))
+        .collect::<String>()
 }
