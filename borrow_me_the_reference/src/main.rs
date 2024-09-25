@@ -1,3 +1,4 @@
+#[allow(unused)]
 use borrow_me_the_reference::{delete_and_backspace, do_operations};
 
 fn main() {}

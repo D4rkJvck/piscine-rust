@@ -34,10 +34,9 @@ fn signed_remove(s: &mut String) {
             s.remove(idx);
 
             if idx > 0 {
-                s.remove(idx - 1);   
+                s.remove(idx - 1);
                 idx -= 1;
             }
-
         }
 
         idx += 1;

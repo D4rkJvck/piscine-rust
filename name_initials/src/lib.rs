@@ -7,6 +7,6 @@ pub fn initials(names: Vec<&str>) -> Vec<String> {
                 .collect::<String>()
                 .trim_end()
                 .to_string()
-            })
+        })
         .collect()
 }

@@ -6,10 +6,7 @@ pub fn str_function(a: String) -> (String, String) {
     (
         a.clone(),
         a.split_whitespace()
-            .map(|num| num.parse::<f64>()
-            .unwrap_or_default()
-            .exp()
-            .to_string())
+            .map(|num| num.parse::<f64>().unwrap_or_default().exp().to_string())
             .collect::<Vec<String>>()
             .join(" "),
     )
