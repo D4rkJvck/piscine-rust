@@ -1,4 +1,4 @@
 [workspace]
-members = [
+members = ["changes"
 ]
 resolver = "2"

@@ -3,45 +3,5 @@
 version = 3
 
 [[package]]
-name = "armstrong_number"
-version = "0.1.0"
-
-[[package]]
-name = "arrange_it"
-version = "0.1.0"
-
-[[package]]
-name = "borrow"
-version = "0.1.0"
-
-[[package]]
-name = "borrow_me_the_reference"
-version = "0.1.0"
-
-[[package]]
-name = "copy"
-version = "0.1.0"
-
-[[package]]
-name = "doubtful"
-version = "0.1.0"
-
-[[package]]
-name = "name_initials"
-version = "0.1.0"
-
-[[package]]
-name = "ownership"
-version = "0.1.0"
-
-[[package]]
-name = "string_literals"
-version = "0.1.0"
-
-[[package]]
-name = "tic_tac_toe"
-version = "0.1.0"
-
-[[package]]
-name = "to_url"
+name = "changes"
 version = "0.1.0"
