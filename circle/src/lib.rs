@@ -35,7 +35,6 @@ impl Circle {
     }
 
     pub fn intersect(&self, other: &Circle) -> bool {
-        self.center.distance(&other.center) < self.radius &&
-        other.center.distance(&self.center) < other.radius
+        self.center.distance(&other.center) < self.radius + other.radius
     }
 }
