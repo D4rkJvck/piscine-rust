@@ -1,4 +1,4 @@
 [workspace]
-members = [ "arrays", "card_deck","changes"
+members = [ "arrays", "capitalizing", "card_deck","changes"
 , "circle", "strings"]
 resolver = "2"
