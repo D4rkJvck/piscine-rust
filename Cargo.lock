@@ -42,6 +42,10 @@ name = "circle"
 version = "0.1.0"
 
 [[package]]
+name = "collect"
+version = "0.1.0"
+
+[[package]]
 name = "edit_distance"
 version = "0.1.0"
 
