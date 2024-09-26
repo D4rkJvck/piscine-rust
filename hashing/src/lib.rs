@@ -20,7 +20,7 @@ pub fn median(list: &Vec<i32>) -> i32 {
     match sorted.len() {
         0 => 0,
         len if len % 2 != 0 => *sorted[len / 2],
-        len if len % 2 == 0 => mean(&vec![*sorted[len / 2], *sorted[len / 2 + 1]]) as i32,
+        len if len % 2 == 0 => mean(&vec![*sorted[len / 2 - 1], *sorted[len / 2]]) as i32,
         _ => unreachable!(),
     }
 }
@@ -91,7 +91,7 @@ mod tests {
     #[test]
     fn test_median_even_sorted_slice() {
         let list = vec![1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        assert_eq!(median(&list), 6)
+        assert_eq!(median(&list), 5)
     }
 
     #[test]
@@ -102,8 +102,8 @@ mod tests {
 
     #[test]
     fn test_median_even_unsorted_slice() {
-        let list = vec![3, 8, 5, 4, 7, 2, 10, 9, 6, 1];
-        assert_eq!(median(&list), 6)
+        let list = vec![1, 2, 2, 4, 5, 7];
+        assert_eq!(median(&list), 3)
     }
 
     #[test]
