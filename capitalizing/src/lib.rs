@@ -1,4 +1,8 @@
 pub fn capitalize_first(input: &str) -> String {
+    if input.is_empty() {
+        return input.to_string()
+    }
+    
     input
         .chars()
         .next()
