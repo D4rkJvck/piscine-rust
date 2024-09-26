@@ -1,11 +1,11 @@
-use::rand::Rng;
+use ::rand::Rng;
 
 #[derive(Debug, PartialEq)]
 pub enum Suit {
     Heart,
     Diamond,
     Spade,
-    Club
+    Club,
 }
 
 impl Suit {
@@ -30,7 +30,7 @@ pub enum Rank {
     King,
     Queen,
     Jack,
-    Number(u8)
+    Number(u8),
 }
 
 impl Rank {
@@ -46,7 +46,6 @@ impl Rank {
             12 => Rank::Queen,
             13 => Rank::King,
             _ => unreachable!(),
-
         }
     }
 }
@@ -54,7 +53,7 @@ impl Rank {
 #[derive(Debug, PartialEq)]
 pub struct Card {
     pub suit: Suit,
-    pub rank: Rank
+    pub rank: Rank,
 }
 
 pub fn winner_card(card: &Card) -> bool {
