@@ -65,6 +65,13 @@ name = "hashing"
 version = "0.1.0"
 
 [[package]]
+name = "is_anagram"
+version = "0.1.0"
+dependencies = [
+ "string_permutation",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.159"
 source = "registry+https://github.com/rust-lang/crates.io-index"
