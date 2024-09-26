@@ -2,7 +2,7 @@ pub fn capitalize_first(input: &str) -> String {
     input
         .chars()
         .next()
-        .unwrap()
+        .unwrap_or_default()
         .to_uppercase()
         .collect::<String>()
         + &input[1..]
