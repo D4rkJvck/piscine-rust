@@ -1,4 +1,4 @@
 [workspace]
 members = [ "arrays", "capitalizing", "card_deck","changes"
-, "circle", "strings"]
+, "circle", "edit_distance", "strings"]
 resolver = "2"
