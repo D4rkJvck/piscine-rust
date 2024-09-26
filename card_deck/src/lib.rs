@@ -1,5 +1,6 @@
 use::rand::Rng;
 
+#[derive(Debug)]
 pub enum Suit {
     Heart,
     Diamond,
@@ -9,7 +10,7 @@ pub enum Suit {
 
 impl Suit {
     pub fn random() -> Suit {
-
+        Suit::translate(rand::thread_rng().gen_range(1..=4))
     }
 
     pub fn translate(idx: u8) -> Suit {
@@ -23,6 +24,7 @@ impl Suit {
     }
 }
 
+#[derive(Debug)]
 pub enum Rank {
     Ace,
     King,
@@ -32,8 +34,8 @@ pub enum Rank {
 }
 
 impl Rank {
-    pub fn Random() -> Rank {
-
+    pub fn random() -> Rank {
+        Rank::translate(rand::thread_rng().gen_range(1..13))
     }
 
     pub fn translate(idx: u8) -> Rank {
@@ -49,14 +51,15 @@ impl Rank {
     }
 }
 
+#[derive(Debug)]
 pub struct Card {
     pub suit: Suit,
     pub rank: Rank
 }
 
-pub fn winner_card(card: Card) -> bool {
-    
-    match card {
-        Card{ suit, rank } => if suit == 
+pub fn winner_card(card: &Card) -> bool {
+    match (&card.suit, &card.rank) {
+        (Suit::Spade, Rank::Ace) => true,
+        _ => false,
     }
 }
