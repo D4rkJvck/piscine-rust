@@ -1,17 +1,7 @@
 [workspace]
 members = [
-    "arrays",
-    "bigger",
-    "capitalizing",
-    "card_deck",
-    "changes",
-    "circle",
-    "collect",
-    "edit_distance",
-    "hashing",
-    "is_anagram",
-    "simple_hash",
-    "string_permutation",
-    "strings",
+    "drawing",
+    "chaikin",
+    "road_intersection"
 ]
 resolver = "2"
