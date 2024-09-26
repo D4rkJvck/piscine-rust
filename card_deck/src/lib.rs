@@ -1,6 +1,6 @@
 use::rand::Rng;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum Suit {
     Heart,
     Diamond,
@@ -24,7 +24,7 @@ impl Suit {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub enum Rank {
     Ace,
     King,
@@ -35,7 +35,7 @@ pub enum Rank {
 
 impl Rank {
     pub fn random() -> Rank {
-        Rank::translate(rand::thread_rng().gen_range(1..13))
+        Rank::translate(rand::thread_rng().gen_range(1..=13))
     }
 
     pub fn translate(idx: u8) -> Rank {
@@ -51,7 +51,7 @@ impl Rank {
     }
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 pub struct Card {
     pub suit: Suit,
     pub rank: Rank

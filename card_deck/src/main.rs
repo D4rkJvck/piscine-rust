@@ -1,4 +1,5 @@
 use card_deck::*;
+
 fn main() {
 	let your_card = Card {
 		rank: Rank::random(),
@@ -12,7 +13,6 @@ fn main() {
 		println!("You are the winner!");
 	}
 }
-
 
 // $ cargo run
 // Your card is Card { suit: Club, rank: Ace }
