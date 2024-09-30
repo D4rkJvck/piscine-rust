@@ -7,6 +7,10 @@ name = "banner"
 version = "0.1.0"
 
 [[package]]
+name = "cipher"
+version = "0.1.0"
+
+[[package]]
 name = "handling"
 version = "0.1.0"
 
