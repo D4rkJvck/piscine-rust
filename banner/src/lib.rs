@@ -42,7 +42,7 @@ impl FlagsHandler {
 
         match callback(argv[0], argv[1]) {
             Ok(res) => res,
-            Err(err) => format!("Error parsing float: {}", err),
+            Err(err) => format!("{err}"),
         }
     }
 }
