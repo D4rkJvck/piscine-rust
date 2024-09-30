@@ -1,6 +1,6 @@
 use std::{collections::HashMap, num::ParseFloatError};
 
-pub type Callback = fn((&str, &str)) -> Result<String, ParseFloatError>;
+pub type Callback = fn(&str, &str) -> Result<String, ParseFloatError>;
 
 pub struct Flag {
     pub short_hand: String,
@@ -35,7 +35,7 @@ impl FlagsHandler {
     }
 
     pub fn exec_func(&self, flag: (String, String), argv: &[&str]) -> String {
-        self.flags.get(&flag).unwrap()((argv[0], argv[1])).unwrap()
+        self.flags.get(&flag).unwrap()(argv[0], argv[1]).unwrap()
     }
 }
 
