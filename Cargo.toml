@@ -1,7 +1,3 @@
 [workspace]
-members = [
-    "drawing",
-    "chaikin",
-    "road_intersection"
-]
+members = ["unwrap_or_expect"]
 resolver = "2"
