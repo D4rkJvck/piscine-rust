@@ -14,7 +14,7 @@ impl CipherError {
 }
 
 pub fn cipher(original: &str, ciphered: &str) -> Option<Result<bool, CipherError>> {
-    if original == "" {
+    if original == "" || ciphered == "" {
         None
     } else if ciphered == to_cipher(original) {
         Some(Ok(true))
