@@ -35,7 +35,15 @@ impl FlagsHandler {
     }
 
     pub fn exec_func(&self, flag: (String, String), argv: &[&str]) -> String {
-        self.flags.get(&flag).unwrap()(argv[0], argv[1]).unwrap()
+        let callback = match self.flags.get(&flag) {
+            None => return "Callback not found".to_string(),
+            Some(callback) => callback,
+        };
+
+        match callback(argv[0], argv[1]) {
+            Ok(res) => res,
+            Err(err) => format!("Error parsing float: {}", err),
+        }
     }
 }
 
