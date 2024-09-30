@@ -6,12 +6,17 @@ pub struct CipherError {
 
 impl CipherError {
     pub fn new(validation: bool, expected: String) -> Self {
-        CipherError { validation, expected }
+        CipherError {
+            validation,
+            expected,
+        }
     }
 }
 
 pub fn cipher(original: &str, ciphered: &str) -> Option<Result<bool, CipherError>> {
-    if ciphered == to_cipher(original) {
+    if original == "" {
+        None
+    } else if ciphered == to_cipher(original) {
         Some(Ok(true))
     } else {
         Some(Err(CipherError::new(false, to_cipher(original))))
@@ -25,8 +30,8 @@ fn to_cipher(s: &str) -> String {
 
     for c in s.chars() {
         match c {
-            'a'..='z' => ciphered.push((c as u8 + 3) as char),
-            'A'..='Z' => ciphered.push((c as u8 + 3) as char),
+            'a'..='z' => ciphered.push(('z' as u8 - c as u8 + 'a' as u8) as char),
+            'A'..='Z' => ciphered.push(('Z' as u8 - c as u8 + 'A' as u8) as char),
             _ => ciphered.push(c),
         }
     }
