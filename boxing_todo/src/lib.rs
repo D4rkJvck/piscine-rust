@@ -1,8 +1,7 @@
 mod err;
 use err::{ParseErr, ReadErr};
 
-use json::JsonValue;
-pub use json::{parse, stringify};
+pub use json::{parse, stringify, JsonValue};
 pub use std::error::Error;
 
 #[derive(Debug, PartialEq, Eq)]
@@ -35,6 +34,7 @@ impl TodoList {
                     child_err: Box::new(e),
                 }))
             }
+
             Ok(f) => f,
         };
 
@@ -43,7 +43,7 @@ impl TodoList {
         let mut content = String::new();
         if let Err(e) = file.read_to_string(&mut content) {
             return Err(Box::new(ReadErr {
-                child_err: Box::new(ParseErr::Malformed(Box::new(e))),
+                child_err: Box::new(e),
             }));
         };
 
@@ -55,7 +55,7 @@ impl TodoList {
         // Parse the file content in json format.
         // Return a parsing error if the content cannot be parsed.
         let parsed = match parse(&content) {
-            Err(e) => return Err(Box::new(ParseErr::Malformed(Box::new(e)))),
+            Err(e) => return Err(Box::new(ParseErr::Malformed(Box::new(ParseErr::Malformed(Box::new(e)))))),
             Ok(json) => json
         };
 
@@ -74,17 +74,20 @@ impl TodoList {
                 let mut task_list = Vec::new();
 
                 for task in tasks {
+                    // Extract the ID.
                     let id = match task["id"] {
                         JsonValue::Number(id) => id.as_fixed_point_u64(0).unwrap_or(0) as u32,
                         _ => unreachable!(),
                     };
 
+                    // Extract the description.
                     let description = match &task["description"] {
                         JsonValue::Short(desc) => desc.to_string(),
                         JsonValue::String(desc) => desc.clone(),
                         _ => unreachable!(),
                     };
 
+                    // Extract the level.
                     let level = match task["level"] {
                         JsonValue::Number(level) => level.as_fixed_point_u64(0).unwrap_or(0) as u32,
                         _ => unreachable!(),
@@ -98,6 +101,11 @@ impl TodoList {
             _ => unreachable!(),
         };
 
-        Ok(TodoList { title, tasks })
+        if tasks.is_empty() {
+            Err(Box::new(ParseErr::Empty))
+        } else {
+            Ok(TodoList { title, tasks })
+        }
+
     }
 }
