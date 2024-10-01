@@ -43,7 +43,7 @@ impl TodoList {
         let mut content = String::new();
         if let Err(e) = file.read_to_string(&mut content) {
             return Err(Box::new(ReadErr {
-                child_err: Box::new(e),
+                child_err: Box::new(ParseErr::Malformed(Box::new(e))),
             }));
         };
 
@@ -53,38 +53,46 @@ impl TodoList {
         };
 
         // Parse the file content in json format.
-        // Return a parsing error
+        // Return a parsing error if the content cannot be parsed.
         let parsed = match parse(&content) {
             Err(e) => return Err(Box::new(ParseErr::Malformed(Box::new(e)))),
             Ok(json) => json
         };
 
-        // Extract the title.
+        // Extract the title field from the parsed content.
         let title = match &parsed["title"] {
             JsonValue::Short(title) => title.to_string(),
             JsonValue::String(title) => title.clone(),
             _ => unreachable!(),
         };
 
+        // Extract the tasks field from the parsed content
+        // one after another taking the id, then the description
+        // and finally the level in a temporary collector.
         let tasks = match &parsed["tasks"] {
             JsonValue::Array(tasks) => {
                 let mut task_list = Vec::new();
+
                 for task in tasks {
                     let id = match task["id"] {
                         JsonValue::Number(id) => id.as_fixed_point_u64(0).unwrap_or(0) as u32,
                         _ => unreachable!(),
                     };
+
                     let description = match &task["description"] {
                         JsonValue::Short(desc) => desc.to_string(),
                         JsonValue::String(desc) => desc.clone(),
                         _ => unreachable!(),
                     };
+
                     let level = match task["level"] {
                         JsonValue::Number(level) => level.as_fixed_point_u64(0).unwrap_or(0) as u32,
                         _ => unreachable!(),
                     };
+
                     task_list.push(Task { id, description, level });
                 }
+
                 task_list
             }
             _ => unreachable!(),
