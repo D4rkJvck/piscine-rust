@@ -1,6 +1,6 @@
-use chrono::{Datelike, NaiveDate, Weekday};
+pub use chrono::{Datelike, NaiveDate, Weekday as wd};
 
-pub fn middle_day(year: i32) -> Option<Weekday> {
+pub fn middle_day(year: i32) -> Option<wd> {
     if is_leap_year(year) {
         None
     } else {
