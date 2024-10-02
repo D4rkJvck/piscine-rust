@@ -1,4 +1,3 @@
-use case;
 pub use edit_distance::edit_distance;
 
 pub fn expected_variable(to_cmp: &str, expected: &str) -> Option<String> {
