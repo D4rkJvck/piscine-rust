@@ -12,7 +12,7 @@ pub fn expected_variable(to_cmp: &str, expected: &str) -> Option<String> {
         expected.to_ascii_lowercase().as_str(),
     );
 
-    let similarity_percentage = 100 - (diff * 100 / expected.len());
+    let similarity_percentage = (expected.len() - diff) * 100 / expected.len();
 
     if similarity_percentage > 50 {
         Some(format!("{}%", similarity_percentage))
