@@ -2,7 +2,7 @@ pub use case::CaseExt;
 pub use edit_distance::edit_distance;
 
 pub fn expected_variable(to_cmp: &str, expected: &str) -> Option<String> {
-    if !(is_camel(to_cmp) || is_snake(to_cmp) || to_cmp != "") {
+    if !(is_camel(to_cmp) || is_snake(to_cmp)) {
         return None;
     }
 
