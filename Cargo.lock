@@ -18,16 +18,78 @@ dependencies = [
 ]
 
 [[package]]
+name = "armstrong_number"
+version = "0.1.0"
+
+[[package]]
+name = "arrange_it"
+version = "0.1.0"
+
+[[package]]
+name = "arrays"
+version = "0.1.0"
+
+[[package]]
 name = "autocfg"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ace50bade8e6234aa140d9a2f552bbee1db4d353f69b8217bc503490fc1a9f26"
 
 [[package]]
+name = "banner"
+version = "0.1.0"
+
+[[package]]
+name = "bigger"
+version = "0.1.0"
+
+[[package]]
+name = "binary_search"
+version = "0.1.0"
+
+[[package]]
+name = "borrow"
+version = "0.1.0"
+
+[[package]]
+name = "borrow_me_the_reference"
+version = "0.1.0"
+
+[[package]]
+name = "boxing_todo"
+version = "0.1.0"
+dependencies = [
+ "json",
+]
+
+[[package]]
 name = "bumpalo"
 version = "3.16.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "79296716171880943b8470b5f8d03aa55eb2e645a4874bdbb28adb49162e012c"
+
+[[package]]
+name = "byteorder"
+version = "1.5.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
+
+[[package]]
+name = "capitalizing"
+version = "0.1.0"
+
+[[package]]
+name = "card_deck"
+version = "0.1.0"
+dependencies = [
+ "rand",
+]
+
+[[package]]
+name = "case"
+version = "1.0.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fd6c0e7b807d60291f42f33f58480c0bfafe28ed08286446f45e463728cf9c1c"
 
 [[package]]
 name = "cc"
@@ -45,6 +107,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
 
 [[package]]
+name = "changes"
+version = "0.1.0"
+
+[[package]]
 name = "chrono"
 version = "0.4.38"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -59,13 +125,87 @@ dependencies = [
 ]
 
 [[package]]
+name = "cipher"
+version = "0.1.0"
+
+[[package]]
+name = "circle"
+version = "0.1.0"
+
+[[package]]
+name = "collect"
+version = "0.1.0"
+
+[[package]]
+name = "copy"
+version = "0.1.0"
+
+[[package]]
 name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
 
 [[package]]
+name = "division_and_remainder"
+version = "0.1.0"
+
+[[package]]
 name = "does_it_fit"
+version = "0.1.0"
+
+[[package]]
+name = "doubtful"
+version = "0.1.0"
+
+[[package]]
+name = "edit_distance"
+version = "0.1.0"
+
+[[package]]
+name = "error_types"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+]
+
+[[package]]
+name = "expected_variable"
+version = "0.1.0"
+dependencies = [
+ "case",
+ "edit_distance",
+]
+
+[[package]]
+name = "fibonacci2"
+version = "0.1.0"
+
+[[package]]
+name = "find_factorial"
+version = "0.1.0"
+
+[[package]]
+name = "getrandom"
+version = "0.2.15"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c4567c8db10ae91089c99af84c68c38da3ec2f087c3f82960bcdbf3656b6f4d7"
+dependencies = [
+ "cfg-if",
+ "libc",
+ "wasi",
+]
+
+[[package]]
+name = "groceries"
+version = "0.1.0"
+
+[[package]]
+name = "handling"
+version = "0.1.0"
+
+[[package]]
+name = "hashing"
 version = "0.1.0"
 
 [[package]]
@@ -89,6 +229,13 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "f31827a206f56af32e590ba56d5d2d085f558508192593743f16b2306495269f"
 dependencies = [
  "cc",
+]
+
+[[package]]
+name = "is_anagram"
+version = "0.1.0"
+dependencies = [
+ "string_permutation",
 ]
 
 [[package]]
@@ -119,6 +266,10 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "a7a70ba024b9dc04c27ea2f0c0548feb474ec5c54bba33a7f72f873a39d07b24"
 
 [[package]]
+name = "looping"
+version = "0.1.0"
+
+[[package]]
 name = "macro_calculator"
 version = "0.1.0"
 dependencies = [
@@ -126,11 +277,19 @@ dependencies = [
 ]
 
 [[package]]
+name = "matrix_transposition"
+version = "0.1.0"
+
+[[package]]
 name = "middle_day"
 version = "0.1.0"
 dependencies = [
  "chrono",
 ]
+
+[[package]]
+name = "name_initials"
+version = "0.1.0"
 
 [[package]]
 name = "num-traits"
@@ -151,10 +310,27 @@ dependencies = [
 ]
 
 [[package]]
+name = "ownership"
+version = "0.1.0"
+
+[[package]]
+name = "panic"
+version = "0.1.0"
+
+[[package]]
 name = "portable-atomic"
 version = "1.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cc9c68a3f6da06753e9335d63e27f6b9754dd1920d941135b7ea8224f141adb2"
+
+[[package]]
+name = "ppv-lite86"
+version = "0.2.20"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "77957b295656769bb8ad2b6a6b09d897d94f05c41b069aede1fcdaa675eaea04"
+dependencies = [
+ "zerocopy",
+]
 
 [[package]]
 name = "proc-macro2"
@@ -166,6 +342,14 @@ dependencies = [
 ]
 
 [[package]]
+name = "profanity_filter"
+version = "0.1.0"
+
+[[package]]
+name = "question_mark"
+version = "0.1.0"
+
+[[package]]
 name = "quote"
 version = "1.0.37"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -175,6 +359,44 @@ dependencies = [
 ]
 
 [[package]]
+name = "rand"
+version = "0.8.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "34af8d1a0e25924bc5b7c43c079c942339d8f0a8b57c39049bef581b46327404"
+dependencies = [
+ "libc",
+ "rand_chacha",
+ "rand_core",
+]
+
+[[package]]
+name = "rand_chacha"
+version = "0.3.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
+dependencies = [
+ "ppv-lite86",
+ "rand_core",
+]
+
+[[package]]
+name = "rand_core"
+version = "0.6.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
+dependencies = [
+ "getrandom",
+]
+
+[[package]]
+name = "reverse_string"
+version = "0.1.0"
+
+[[package]]
+name = "scalar"
+version = "0.1.0"
+
+[[package]]
 name = "shlex"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -182,6 +404,26 @@ checksum = "0fda2ff0d084019ba4d7c6f371c95d8fd75ce3524c3cb8fb653a3023f6323e64"
 
 [[package]]
 name = "shopping_mall"
+version = "0.1.0"
+
+[[package]]
+name = "simple_hash"
+version = "0.1.0"
+
+[[package]]
+name = "speed_transformation"
+version = "0.1.0"
+
+[[package]]
+name = "string_literals"
+version = "0.1.0"
+
+[[package]]
+name = "string_permutation"
+version = "0.1.0"
+
+[[package]]
+name = "strings"
 version = "0.1.0"
 
 [[package]]
@@ -196,10 +438,36 @@ dependencies = [
 ]
 
 [[package]]
+name = "temperature_conv"
+version = "0.1.0"
+
+[[package]]
+name = "tic_tac_toe"
+version = "0.1.0"
+
+[[package]]
+name = "to_url"
+version = "0.1.0"
+
+[[package]]
+name = "tuples_refs"
+version = "0.1.0"
+
+[[package]]
 name = "unicode-ident"
 version = "1.0.13"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e91b56cd4cadaeb79bbf1a5645f6b4f8dc5bde8834ad5894a8db35fda9efa1fe"
+
+[[package]]
+name = "unwrap_or_expect"
+version = "0.1.0"
+
+[[package]]
+name = "wasi"
+version = "0.11.0+wasi-snapshot-preview1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423"
 
 [[package]]
 name = "wasm-bindgen"
@@ -328,3 +596,24 @@ name = "windows_x86_64_msvc"
 version = "0.52.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "589f6da84c646204747d1270a2a5661ea66ed1cced2631d546fdfb155959f9ec"
+
+[[package]]
+name = "zerocopy"
+version = "0.7.35"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1b9b4fd18abc82b8136838da5d50bae7bdea537c574d8dc1a34ed098d6c166f0"
+dependencies = [
+ "byteorder",
+ "zerocopy-derive",
+]
+
+[[package]]
+name = "zerocopy-derive"
+version = "0.7.35"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "fa4f8080344d4671fb4e831a13ad1e68092748387dfc4f55e356242fae12ce3e"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn",
+]
