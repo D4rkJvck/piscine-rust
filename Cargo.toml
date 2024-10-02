@@ -1,3 +1,3 @@
 [workspace]
-members = [ "does_it_fit","middle_day"]
+members = [ "does_it_fit", "macro_calculator","middle_day"]
 resolver = "2"
