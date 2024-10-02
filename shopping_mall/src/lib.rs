@@ -53,7 +53,7 @@ pub fn nbr_of_employees(mall: mall::Mall) -> usize {
 
 pub fn check_for_securities(mall: &mut mall::Mall, mut guards: Vec<mall::guard::Guard>) {
     let surface: u64 = mall.floors.iter().flat_map(|f| f.stores.iter()).map(|s| s.square_meters).sum();
-    panic!("Surface: {:?}", surface);
+    // panic!("Surface: {:?}", surface);
 
     while surface / guards.len() as u64 > 200 {
         println!("{:#?}", guards.len());
