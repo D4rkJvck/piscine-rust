@@ -72,9 +72,9 @@ pub fn cut_or_raise(mall: &mut mall::Mall) {
             let work_time = e.working_hours.1 - e.working_hours.0;
 
             if work_time < 10 {
-                e.raise((percent * 1000.0).round() / 1000.0);
-            } else {
                 e.cut((percent * 1000.0).round() / 1000.0);
+            } else {
+                e.raise((percent * 1000.0).round() / 1000.0);
             }
         });
 }
