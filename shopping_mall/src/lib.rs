@@ -51,12 +51,12 @@ pub fn nbr_of_employees(mall: mall::Mall) -> usize {
 //________________________________________________________________________________________________
 //
 
-pub fn check_for_securities(mall: &mut mall::Mall, _guards: Vec<mall::guard::Guard>) {
+pub fn check_for_securities(mall: &mut mall::Mall, mut guards: Vec<mall::guard::Guard>) {
     let surface: u64 = mall.floors.iter().map(|f| f.size_limit).sum();
 
     while surface / mall.guards.len() as u64 > 200 {
-        mall.guards.push(mall.guards[0].clone());
-        println!("{:#?}", mall.guards.len());
+        mall.guards.push(guards[0].clone());
+        let _ = guards.remove(0);
     }
 }
 
