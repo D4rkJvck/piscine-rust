@@ -12,7 +12,7 @@ pub fn expected_variable(to_cmp: &str, expected: &str) -> Option<String> {
         expected.to_ascii_lowercase().as_str(),
     );
 
-    if diff > expected.len() {
+    if diff >= expected.len() {
         return None
     };
 
