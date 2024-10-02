@@ -2,7 +2,7 @@ pub use case::CaseExt;
 pub use edit_distance::edit_distance;
 
 pub fn expected_variable(to_cmp: &str, expected: &str) -> Option<String> {
-    if !(is_camel(to_cmp) || is_snake(to_cmp)) {
+    if !(is_camel(to_cmp) || is_snake(to_cmp) || to_cmp != "") {
         return None;
     }
 
@@ -12,7 +12,13 @@ pub fn expected_variable(to_cmp: &str, expected: &str) -> Option<String> {
         expected.to_ascii_lowercase().as_str(),
     );
 
-    Some(format!("{}%", 100 - (diff * 100 / expected.len())))
+    let similarity_percentage = 100 - (diff * 100 / expected.len());
+
+    if similarity_percentage > 50 {
+        Some(format!("{}%", similarity_percentage))
+    } else {
+        None
+    }
 }
 
 //_________________________________________________________________________________
