@@ -1,6 +1,7 @@
-pub mod mobs;
+mod mobs;
 
-pub use mobs::*;
+use mobs as mobs_module;
 
-// pub use crate::mobs_module::boss;
-// pub use crate::mobs_module::member;
+pub use mobs_module::Mob;
+pub use mobs_module::boss;
+pub  use mobs_module::member;

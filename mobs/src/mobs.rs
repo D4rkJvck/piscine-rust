@@ -1,9 +1,6 @@
 pub mod boss;
 pub mod member;
 
-pub use crate::boss::*;
-pub use crate::member::*;
-
 #[derive(Debug, Clone, PartialEq)]
 pub struct Mob {
     pub name: String,
