@@ -232,6 +232,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "invert_sentence"
+version = "0.1.0"
+
+[[package]]
 name = "is_anagram"
 version = "0.1.0"
 dependencies = [

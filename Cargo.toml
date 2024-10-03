@@ -59,6 +59,6 @@ members = [
     "macro_calculator",
     "shopping_mall",
     "expected_variable",
-    "mobs",
+    "mobs", "invert_sentence",
 ]
 resolver = "2"
