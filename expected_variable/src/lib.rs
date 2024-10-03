@@ -30,7 +30,7 @@ fn is_camel(s: &str) -> bool {
     s.chars().any(|c| c.is_uppercase()) && !s.contains(' ')
 }
 
-//-----------------------------------------------
+//-----------------------------------------------------------------------
 
 fn is_snake(s: &str) -> bool {
     s.contains('_') && s.chars().any(|c| c.is_uppercase()) == false
