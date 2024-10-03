@@ -63,6 +63,6 @@ members = [
     "invert_sentence",
 
     # PATTERNS
-    "stars",
+    "stars", "scores",
 ]
 resolver = "2"
