@@ -1,4 +1,4 @@
-use mobs::*;
+use mobs::mobs::*;
 
 fn main() {
   let (mafia1, mafia2) = (
@@ -27,7 +27,7 @@ fn main() {
     },
   );
 
-  println!("{:?}\n{:?}", mafia1, mafia2);
+  println!("{:#?}\n{:#?}", mafia1, mafia2);
 }
 
 // $ cargo run
