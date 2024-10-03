@@ -70,5 +70,6 @@ members = [
     "pangram",
     "talking",
     "logic_number",
+    "rot",
 ]
 resolver = "2"
