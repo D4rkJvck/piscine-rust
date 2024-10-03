@@ -59,5 +59,6 @@ members = [
     "macro_calculator",
     "shopping_mall",
     "expected_variable",
+    "mobs",
 ]
 resolver = "2"
