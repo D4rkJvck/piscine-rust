@@ -65,6 +65,10 @@ members = [
     # PATTERNS
     "stars",
     "scores",
-    "searching", "ordinal", "pangram", "talking",
+    "searching",
+    "ordinal",
+    "pangram",
+    "talking",
+    "logic_number",
 ]
 resolver = "2"
