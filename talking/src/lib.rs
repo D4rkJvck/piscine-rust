@@ -1,9 +1,9 @@
 pub fn talking(text: &str) -> &str {
     match text {
+        s if s.is_empty() => "Just say something!",
         s if is_question(s) && is_yelling(s) => "Quiet, I am thinking!",
         s if is_yelling(s) => "There is no need to yell, calm down!",
         s if is_question(s) => "Sure.",
-        s if s.is_empty() => "Just say something!",
         _ => "Interesting",
     }
 }
@@ -16,9 +16,8 @@ fn is_question(s: &str) -> bool {
 }
 
 fn is_yelling(string: &str) -> bool {
-    !string.is_empty()
-        && string
-            .chars()
-            .filter(|c| c.is_alphabetic())
-            .all(|c| c.is_uppercase())
+    string
+        .chars()
+        .filter(|c| c.is_alphabetic())
+        .all(|c| c.is_uppercase())
 }
