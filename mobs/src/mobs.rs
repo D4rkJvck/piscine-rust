@@ -63,7 +63,7 @@ fn power_combat_score(mob: &Mob) -> u32 {
 
     mob.members
         .iter()
-        .map(|m| match m.get_role() {
+        .map(|m| match m.role {
             Associate => 1,
             Soldier => 2,
             Caporegime => 3,

@@ -11,9 +11,9 @@ pub enum Role {
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Member {
-    name: String,
-    role: Role,
-    age: u8,
+    pub name: String,
+    pub role: Role,
+    pub age: u8,
 }
 
 impl Member {
@@ -35,9 +35,5 @@ impl Member {
             Caporegime => Underboss,
             Underboss => Underboss
         }
-    }
-
-    pub fn get_role(&self) -> &Role {
-        &self.role
     }
 }
