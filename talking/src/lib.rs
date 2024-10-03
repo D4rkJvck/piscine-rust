@@ -1,20 +1,9 @@
 pub fn talking(text: &str) -> &str {
     match text {
         s if s.is_empty() => "Just say something!",
-        s if (is_question(s) && is_yelling(s)) => "Quiet, I am thinking!",
-        s if is_yelling(s) => "There is no need to yell, calm down!",
-        s if is_question(s) => "Sure.",
+        s if !s.chars().any(|c| c.is_lowercase()) && s.ends_with('?') => "Quiet, I am thinking!",
+        s if s.ends_with('?') => "Sure.",
+        s if !s.chars().any(|c| c.is_lowercase()) => "There is no need to yell, calm down!",
         _ => "Interesting",
     }
-}
-
-//________________________________________________________________
-//
-
-fn is_question(s: &str) -> bool {
-    s.ends_with('?')
-}
-
-fn is_yelling(string: &str) -> bool {
-    !string.chars().any(|c| c.is_ascii_lowercase())
 }
