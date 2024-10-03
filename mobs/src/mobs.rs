@@ -12,11 +12,8 @@ pub struct Mob {
 
 impl Mob {
     pub fn recruit(&mut self, name: &str, age: u8) {
-        self.members.push(member::Member::new(
-            name,
-            member::Role::Associate,
-            age,
-        ));
+        self.members
+            .push(member::Member::new(name, member::Role::Associate, age));
     }
 
     pub fn attack(&mut self, target: &mut Mob) {
@@ -41,12 +38,12 @@ impl Mob {
     }
 
     pub fn conquer_city(&mut self, mobs: Vec<Mob>, city_name: String, value: u8) {
-        let cities = mobs
+        let taken = mobs
             .iter()
             .flat_map(|mob| mob.cities.iter())
-            .collect::<Vec<&(String, u8)>>();
+            .any(|c| c.0 == city_name);
 
-        if !cities.contains(&&(city_name.clone(), value)) {
+        if !taken {
             self.cities.push((city_name, value));
         }
     }
