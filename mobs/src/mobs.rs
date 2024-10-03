@@ -43,7 +43,7 @@ impl Mob {
         }
     }
 
-    pub fn conquer_city(&mut self, mobs: Vec<&Mob>, city_name: String, value: u8) {
+    pub fn conquer_city(&mut self, mobs: Vec<Mob>, city_name: String, value: u8) {
         let cities = mobs
             .iter()
             .flat_map(|mob| mob.cities.iter())
