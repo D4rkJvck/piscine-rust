@@ -59,6 +59,10 @@ members = [
     "macro_calculator",
     "shopping_mall",
     "expected_variable",
-    "mobs", "invert_sentence",
+    "mobs",
+    "invert_sentence",
+
+    # PATTERNS
+    "stars",
 ]
 resolver = "2"
