@@ -71,5 +71,6 @@ members = [
     "talking",
     "logic_number",
     "rot",
+    "rgb_match",
 ]
 resolver = "2"
