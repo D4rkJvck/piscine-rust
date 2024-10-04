@@ -8,59 +8,56 @@ pub struct Color {
 
 impl Color {
     pub fn swap(mut self, first: u8, second: u8) -> Self {
-        
-        if first == self.r {
-            if second == self.g {
-                self.r = second;
-                self.g = first;
-            } else if second == self.b {
-                self.r = second;
-                self.b = first;
-            } else if second == self.a {
-                self.r = second;
-                self.a = first;
-            } else {
-                return self
+        match (first, second) {
+            (r, g) if r == self.r && g == self.g => {
+                self.r = g;
+                self.g = r;
             }
-        } else if first == self.g {
-            if second == self.r {
-                self.g = second;
-                self.r = first;
-            } else if second == self.b {
-                self.g = second;
-                self.b = first;
-            } else if second == self.a {
-                self.g = second;
-                self.a = first;
-            } else {
-                return self
+            (r, b) if r == self.r && b == self.b => {
+                self.r = b;
+                self.b = r;
             }
-        } else if first == self.b {
-            if second == self.r {
-                self.b = second;
-                self.r = first;
-            } else if second == self.g {
-                self.b = second;
-                self.g = first;
-            } else if second == self.a {
-                self.b = second;
-                self.a = first;
-            } else {
-                return self
+            (r, a) if r == self.r && a == self.a => {
+                self.r = a;
+                self.a = r;
             }
-        } else if first == self.a {
-            if second == self.r {
-                self.a = second;
-                self.r = first;
-            } else if second == self.g {
-                self.a = second;
-                self.g = first;
-            } else if second == self.b {
-                self.a = second;
-                self.b = first;
-            } else {
-                return self
+            (g, r) if g == self.g && r == self.r => {
+                self.g = r;
+                self.r = g;
             }
+            (g, b) if g == self.g && b == self.b => {
+                self.g = b;
+                self.b = g;
+            }
+            (g, a) if g == self.g && a == self.a => {
+                self.g = a;
+                self.a = g;
+            }
+            (b, r) if b == self.b && r == self.r => {
+                self.b = r;
+                self.r = b;
+            }
+            (b, g) if b == self.b && g == self.g => {
+                self.b = g;
+                self.g = b;
+            }
+            (b, a) if b == self.b && a == self.a => {
+                self.b = a;
+                self.a = b;
+            }
+            (a, r) if a == self.a && r == self.r => {
+                self.a = r;
+                self.r = a;
+            }
+            (a, g) if a == self.a && g == self.g => {
+                self.a = g;
+                self.g = a;
+            }
+            (a, b) if a == self.a && b == self.b => {
+                self.a = b;
+                self.b = a;
+            }
+            _ => return self, // No swap needed
         }
 
         self
