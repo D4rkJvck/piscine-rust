@@ -2,7 +2,7 @@ pub fn spell(n: u64) -> String {
     if n == 0 {
         String::from("zero")
     } else {
-        spelling(n)
+        spelling(n).trim().to_string()
     }
 }
 
@@ -29,9 +29,6 @@ fn spelling(n: u64) -> String {
         31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 => "thirty-".to_owned() + &spelling(n % 10),
         50 => String::from("fifty"),
         51 | 52 | 53 | 54 | 55 | 56 | 57 | 58 | 59 => "fifty-".to_owned() + &spelling(n % 10),
-        100 => String::from("one hundred"),
-        1_000 => String::from("one thousand"),
-        1_000_000 => String::from("one million"),
         n if n >= 1_000_000 => spelling(n / 1_000_000) + " million " + &spelling(n % 1_000_000),
         n if n >= 1_000 => spelling(n / 1_000) + " thousand " + &spelling(n % 1_000),
         n if n >= 100 => spelling(n / 100) + " hundred " + &spelling(n % 100),
