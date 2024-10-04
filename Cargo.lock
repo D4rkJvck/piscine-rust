@@ -436,6 +436,10 @@ name = "scores"
 version = "0.1.0"
 
 [[package]]
+name = "scytale_cipher"
+version = "0.1.0"
+
+[[package]]
 name = "searching"
 version = "0.1.0"
 

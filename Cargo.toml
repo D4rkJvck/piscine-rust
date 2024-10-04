@@ -72,6 +72,6 @@ members = [
     "logic_number",
     "rot",
     "rgb_match",
-    "pig_latin",
+    "pig_latin", "scytale_cipher",
 ]
 resolver = "2"
