@@ -10,6 +10,7 @@ fn main() {
     println!("{}", spell(348));
     println!("{}", spell(1_002));
     println!("{}", spell(9_996));
+    println!("{}", spell(14_000));
     println!("{}", spell(1_000_000));
 }
 

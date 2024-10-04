@@ -22,7 +22,7 @@ fn count(n: u64) -> String {
         12 => String::from("twelve"),
         13 => String::from("thirteen"),
         15 => String::from("fifteen"),
-        14 | 16 | 17 | 18 | 19 => count(n % 10) + "teen ",
+        14 | 16 | 17 | 18 | 19 => count(n % 10) + "teen",
         30 => String::from("thirty"),
         50 => String::from("fifty"),
         n if n >= 1_000_000 => count(n / 1_000_000) + " million " + &count(n % 1_000_000),
