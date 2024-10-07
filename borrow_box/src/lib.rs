@@ -35,6 +35,10 @@ impl GameSession {
             return;
         }
 
+        if self.p1.1 == 3 || self.p2.1 == 3 {
+            return;
+        }
+
         if user_name == self.p1.0 {
             self.p1.1 += 1
         } else if user_name == self.p2.0 {
