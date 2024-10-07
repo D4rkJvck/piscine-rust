@@ -77,5 +77,8 @@ members = [
     "diamond_creation",
     "spelling",
     "luhn_algorithm",
+    
+    # POINTERS
+    "box_it",
 ]
 resolver = "2"
