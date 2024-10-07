@@ -1,3 +1,4 @@
+#[derive(Debug, PartialEq, Eq)]
 pub struct GameSession {
     pub id: u32,
     pub p1: (String, u16),
