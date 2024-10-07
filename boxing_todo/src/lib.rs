@@ -55,8 +55,12 @@ impl TodoList {
         // Parse the file content in json format.
         // Return a parsing error if the content cannot be parsed.
         let parsed = match parse(&content) {
-            Err(e) => return Err(Box::new(ParseErr::Malformed(Box::new(ParseErr::Malformed(Box::new(e)))))),
-            Ok(json) => json
+            Err(e) => {
+                return Err(Box::new(ParseErr::Malformed(Box::new(
+                    ParseErr::Malformed(Box::new(e)),
+                ))))
+            }
+            Ok(json) => json,
         };
 
         // Extract the title field from the parsed content.
@@ -93,7 +97,11 @@ impl TodoList {
                         _ => unreachable!(),
                     };
 
-                    task_list.push(Task { id, description, level });
+                    task_list.push(Task {
+                        id,
+                        description,
+                        level,
+                    });
                 }
 
                 task_list
@@ -106,6 +114,5 @@ impl TodoList {
         } else {
             Ok(TodoList { title, tasks })
         }
-
     }
 }

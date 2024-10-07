@@ -1,6 +1,6 @@
-use std::fs::File;
-use std::fs;
 use panic::*;
+use std::fs;
+use std::fs::File;
 
 fn main() {
     let filename = "created.txt";
@@ -8,7 +8,7 @@ fn main() {
 
     let a = open_file(filename);
     println!("{:?}", a);
-    
+
     fs::remove_file(filename).unwrap();
 
     //It must panic

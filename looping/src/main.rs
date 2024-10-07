@@ -13,9 +13,9 @@ fn main() {
             .expect("Failed to read...");
 
         if input.trim() == &answer {
-            break trials
+            break trials;
         };
-        
+
         trials += 1;
         input.clear();
     };

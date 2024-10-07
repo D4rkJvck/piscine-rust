@@ -1,6 +1,6 @@
 use macro_calculator::*;
 
-fn main(){
+fn main() {
     let a = vec![
         Food {
             name: String::from("big mac"),
@@ -22,7 +22,6 @@ fn main(){
 
     println!("{:#}", calculate_macros(a));
 }
-
 
 // $ cargo run
 // {

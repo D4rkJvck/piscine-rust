@@ -1,6 +1,5 @@
 use std::collections::HashMap;
 
-
 pub fn is_permutation(s1: &str, s2: &str) -> bool {
     letter_freq_count(s1) == letter_freq_count(s2)
 }

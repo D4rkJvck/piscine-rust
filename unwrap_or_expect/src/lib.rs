@@ -24,8 +24,6 @@ fn low_lvl_msg(url: String) -> String {
     format!("Not found: {}", url)
 }
 
-
-
 ////////////////////////////////////////////////////////////////////////////////////////////////
 
 // pub fn fetch_data(server: Result<String, String>, sec_lvl: Security) -> String {

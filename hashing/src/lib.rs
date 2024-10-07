@@ -45,11 +45,7 @@ pub fn mode(list: &Vec<i32>) -> i32 {
     }
 
     // *n_map.iter().max_by(|a, b| a.1.cmp(b.1)).unwrap().0
-    *n_map
-        .iter()
-        .max_by(|a, b| a.1.cmp(b.1))
-        .unwrap()
-        .0
+    *n_map.iter().max_by(|a, b| a.1.cmp(b.1)).unwrap().0
 }
 
 ////////////////////////////////////////////////////////////////////////

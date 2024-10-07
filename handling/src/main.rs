@@ -1,6 +1,6 @@
+use handling::*;
 use std::fs::File;
 use std::io::Read;
-use handling::*;
 
 fn main() {
     let path = "a.txt";

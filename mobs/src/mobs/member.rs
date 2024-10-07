@@ -19,11 +19,7 @@ pub struct Member {
 impl Member {
     pub fn new(n: &str, role: Role, age: u8) -> Self {
         let name = n.to_owned();
-        Member {
-            name,
-            role,
-            age
-        }
+        Member { name, role, age }
     }
 
     pub fn get_promotion(&mut self) {
@@ -33,7 +29,7 @@ impl Member {
             Associate => Soldier,
             Soldier => Caporegime,
             Caporegime => Underboss,
-            Underboss => Underboss
+            Underboss => Underboss,
         }
     }
 }

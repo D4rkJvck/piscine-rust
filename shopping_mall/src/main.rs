@@ -73,13 +73,19 @@ fn main() {
     let mut mall_la_vie = mall::Mall::new("La Vie Funchal", secs, floors);
 
     //returns the biggest store
-    println!("Biggest store: {:#?}",biggest_store(mall_la_vie.clone()));
+    println!("Biggest store: {:#?}", biggest_store(mall_la_vie.clone()));
 
     //returns the list with the highest paid employees
-    println!("Highest paid employee: {:#?}", highest_paid_employee(mall_la_vie.clone()));
+    println!(
+        "Highest paid employee: {:#?}",
+        highest_paid_employee(mall_la_vie.clone())
+    );
 
     //returns the number of employees
-    println!("Number of employees: {:?}", nbr_of_employees(mall_la_vie.clone()));
+    println!(
+        "Number of employees: {:?}",
+        nbr_of_employees(mall_la_vie.clone())
+    );
 
     //checks if it is needed to add securities
     check_for_securities(

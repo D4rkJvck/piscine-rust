@@ -1,4 +1,4 @@
-pub use chrono::{Utc, NaiveDate};
+pub use chrono::{NaiveDate, Utc};
 
 #[derive(Debug, PartialEq, Eq)]
 pub struct Form {
@@ -42,7 +42,7 @@ impl Form {
         } else if !has_ascii_combination(&self.password) {
             Err(FormError::new(
                 "password".to_string(), 
-                self.password.to_string(), 
+                self.password.to_string(),
                 "Combination of different ASCII character types (numbers, letters and none alphanumeric characters)".to_string()
             ))
         } else {

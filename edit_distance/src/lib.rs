@@ -27,7 +27,11 @@ pub fn edit_distance(src: &str, tgt: &str) -> usize {
                 .unwrap();
             }
 
-            if i > 1 && j > 1 && src.chars().nth(i - 1) == tgt.chars().nth(j - 2) && src.chars().nth(i - 2) == tgt.chars().nth(j - 1) {
+            if i > 1
+                && j > 1
+                && src.chars().nth(i - 1) == tgt.chars().nth(j - 2)
+                && src.chars().nth(i - 2) == tgt.chars().nth(j - 1)
+            {
                 dp[i][j] = dp[i][j].min(dp[i - 2][j - 2] + 1); // Transposition
             }
         }

@@ -23,6 +23,6 @@ impl Message {
 pub fn check_ms(msg: &Message) -> (bool, &str) {
     match msg.send_ms() {
         Some(msg) => (true, msg),
-        None => (false, "ERROR: illegal")
+        None => (false, "ERROR: illegal"),
     }
 }

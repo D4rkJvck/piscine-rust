@@ -8,15 +8,15 @@ pub fn pig_latin(text: &str) -> String {
         } else {
             break;
         }
-    };
+    }
 
     match (count, qu) {
         (c, _) if c == 0 => format!("{text}ay"),
         (c, q) => match q {
             Some(v) if v == 1 => format!("{}{}quay", &text[3..], &text.chars().next().unwrap()),
             Some(_) => format!("{}{}ay", &text[c..], &text[0..c]),
-            None => format!("{}{}ay", &text[c..], &text[0..c])
-        }
+            None => format!("{}{}ay", &text[c..], &text[0..c]),
+        },
     }
 }
 

@@ -1,9 +1,15 @@
 use unwrap_or_expect::*;
 
 fn main() {
-    println!("{}", fetch_data(Ok("server1.com".to_string()), Security::Medium));
+    println!(
+        "{}",
+        fetch_data(Ok("server1.com".to_string()), Security::Medium)
+    );
     println!("{}", fetch_data(Err(String::new()), Security::Medium));
-    println!("{}", fetch_data(Err("server2.com".to_string()), Security::Low));
+    println!(
+        "{}",
+        fetch_data(Err("server2.com".to_string()), Security::Low)
+    );
 
     // Panics with no custom message
     // fetch_data(Err("ERROR CRITICAL".to_string()), Security::Unknown);

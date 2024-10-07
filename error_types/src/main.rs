@@ -4,7 +4,6 @@ fn create_date(date_str: &str) -> NaiveDate {
     NaiveDate::parse_from_str(date_str, "%Y-%m-%d").expect("Invalid date format")
 }
 
-
 fn main() {
     let mut form_output = Form::new(
         String::from("Lee"),
@@ -30,7 +29,6 @@ fn main() {
     form_output.password = String::from("asdasASd123SA");
     println!("{:?}", form_output.validate().unwrap_err());
 }
-
 
 // $ cargo run
 // Form { first_name: "Lee", last_name: "Silva", birth: 2015-09-05, birth_location: "Africa", password: "qwqwsa1dty_" }

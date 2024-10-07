@@ -53,7 +53,7 @@ impl FlagsHandler {
 pub fn div(a: &str, b: &str) -> Result<String, ParseFloatError> {
     let ops = match parse_float(a, b) {
         Err(err) => return Err(err),
-        Ok(val) => val
+        Ok(val) => val,
     };
 
     Ok((ops.0 / ops.1).to_string())
@@ -62,7 +62,7 @@ pub fn div(a: &str, b: &str) -> Result<String, ParseFloatError> {
 pub fn rem(a: &str, b: &str) -> Result<String, ParseFloatError> {
     let ops = match parse_float(a, b) {
         Err(err) => return Err(err),
-        Ok(val) => val
+        Ok(val) => val,
     };
 
     Ok((ops.0 % ops.1).to_string())

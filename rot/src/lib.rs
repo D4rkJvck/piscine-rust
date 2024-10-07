@@ -14,18 +14,17 @@ pub fn rotate(input: &str, key: i8) -> String {
                 } else {
                     ciphered.push(((c as u8 - b'a' + key as u8) % 26 + b'a') as char);
                 }
-            },
+            }
             'A'..='Z' => {
                 if negative {
                     ciphered.push((b'Z' - (key.abs() as u8 + b'Z' - c as u8) % 26) as char);
                 } else {
                     ciphered.push(((c as u8 - b'A' + key as u8) % 26 + b'A') as char);
                 }
-            },
+            }
             _ => ciphered.push(c),
         }
     }
 
     ciphered
 }
-
