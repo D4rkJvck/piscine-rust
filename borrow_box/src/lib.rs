@@ -2,11 +2,11 @@ pub struct GameSession {
     pub id: u32,
     pub p1: (String, u16),
     pub p2: (String, u16),
-    pub nbr_games: u16,
+    pub nb_games: u16,
 }
 
 impl GameSession {
-    pub fn new(id: u32, p1_name: String, p2_name: String, nbr_games: u16) -> Box<Self> {
+    pub fn new(id: u32, p1_name: String, p2_name: String, nb_games: u16) -> Box<Self> {
         let p1 = (String::from(p1_name), 0);
         let p2 = (String::from(p2_name), 0);
 
@@ -14,7 +14,7 @@ impl GameSession {
             id,
             p1,
             p2,
-            nbr_games,
+            nb_games,
         })
     }
 
@@ -30,7 +30,7 @@ impl GameSession {
     }
 
     pub fn update_score(&mut self, user_name: String) {
-        if self.nbr_games == 0 {
+        if self.nb_games == 0 {
             return ()
         }
 
@@ -42,7 +42,7 @@ impl GameSession {
             ()
         }
 
-        self.nbr_games -= 1;
+        self.nb_games -= 1;
     }
 
     pub fn delete(self) -> String {
