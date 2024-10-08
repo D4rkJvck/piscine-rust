@@ -20,14 +20,14 @@ impl<'l> Tracker<'l> {
     }
 
     pub fn set_value(&self, track_value: &Rc<usize>) {
-        let percent = Rc::strong_count(track_value) * 100 / self.max;
+        *self.value.borrow_mut() = Rc::strong_count(track_value) * 100 / self.max;
 
-        match percent {
+        match *self.value.borrow() {
             100.. => self.logger.error("Error: you are over your quota!"),
             70..=99 => self.logger.warning(
                 format!(
                     "Warning: you have used up over {}% of your quota! Proceeds with precaution",
-                    percent
+                    self.value.borrow()
                 )
                 .as_str(),
             ),
