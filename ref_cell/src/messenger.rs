@@ -22,8 +22,8 @@ impl<'l> Tracker<'l> {
 
     pub fn set_value(&self, track_value: &Rc<usize>) {
         match Rc::strong_count(track_value) * 100 / self.max {
-            (100..) => self.logger.error("Error: you are over your quota!"),
-            (70..100) => self.logger.warning(
+            100.. => self.logger.error("Error: you are over your quota!"),
+            70..=99 => self.logger.warning(
                 format!(
                     "Warning: you have used up over {}% of your quota! Proceeds with precaution",
                     track_value
