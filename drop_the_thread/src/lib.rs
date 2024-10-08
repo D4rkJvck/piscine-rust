@@ -41,6 +41,7 @@ impl Workers {
 //__________________________________________________________________________________
 //
 
+#[derive(Clone)]
 pub struct Thread<'a> {
     pub pid: usize,
     pub cmd: String,
