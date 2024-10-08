@@ -64,6 +64,10 @@ name = "box_it"
 version = "0.1.0"
 
 [[package]]
+name = "box_recursion"
+version = "0.1.0"
+
+[[package]]
 name = "boxing_todo"
 version = "0.1.0"
 dependencies = [
