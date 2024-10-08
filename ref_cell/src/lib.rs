@@ -27,7 +27,7 @@ impl Logger for Worker {
     fn info(&self, msg: &str) {
         self.mapped_messages
             .borrow_mut()
-            .insert("Info".to_string(), msg.replace("Info:", ""));
+            .insert("Info".to_string(), msg.replace("Info: ", ""));
 
         self.all_messages.borrow_mut().push(msg.to_string());
     }
@@ -35,7 +35,7 @@ impl Logger for Worker {
     fn warning(&self, msg: &str) {
         self.mapped_messages
             .borrow_mut()
-            .insert("Warning".to_string(), msg.replace("Warning:", ""));
+            .insert("Warning".to_string(), msg.replace("Warning: ", ""));
 
         self.all_messages.borrow_mut().push(msg.to_string());
     }
@@ -43,7 +43,7 @@ impl Logger for Worker {
     fn error(&self, msg: &str) {
         self.mapped_messages
             .borrow_mut()
-            .insert("Error".to_string(), msg.replace("Error:", ""));
+            .insert("Error".to_string(), msg.replace("Error: ", ""));
 
         self.all_messages.borrow_mut().push(msg.to_string());
     }

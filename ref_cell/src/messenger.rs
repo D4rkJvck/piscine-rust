@@ -20,20 +20,23 @@ impl<'l> Tracker<'l> {
     }
 
     pub fn set_value(&self, track_value: &Rc<usize>) {
-        match Rc::strong_count(track_value) * 100 / self.max {
+        let percent = Rc::strong_count(track_value) * 100 / self.max;
+
+        match percent {
             100.. => self.logger.error("Error: you are over your quota!"),
             70..=99 => self.logger.warning(
                 format!(
                     "Warning: you have used up over {}% of your quota! Proceeds with precaution",
-                    track_value
+                    percent
                 )
                 .as_str(),
             ),
-            _ => println!("Not working..."),
+            _ => {},
         };
     }
 
     pub fn peek(&self, track_value: &Rc<usize>) {
+        println!("track_value: {:?}", Rc::strong_count(track_value));
         self.logger.info(&format!(
             "Info: you are using up to {}% of your quota",
             Rc::strong_count(track_value) * 100 / self.max
