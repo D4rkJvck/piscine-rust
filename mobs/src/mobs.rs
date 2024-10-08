@@ -16,7 +16,7 @@ impl Mob {
             .push(member::Member::new(name, member::Role::Associate, age));
     }
 
-    pub fn attack(&mut self, target: &mut Mob) {
+    pub fn attack(&mut self, target: &mut Self) {
         let atk = power_combat_score(self);
         let def = power_combat_score(&target);
 
@@ -27,7 +27,7 @@ impl Mob {
         }
     }
 
-    pub fn steal(&mut self, target: &mut Mob, money: u32) {
+    pub fn steal(&mut self, target: &mut Self, money: u32) {
         if money < target.wealth {
             self.wealth += money;
             target.wealth -= money;
@@ -37,7 +37,7 @@ impl Mob {
         }
     }
 
-    pub fn conquer_city(&mut self, mobs: Vec<Mob>, city_name: String, value: u8) {
+    pub fn conquer_city(&mut self, mobs: Vec<Self>, city_name: String, value: u8) {
         let taken = mobs
             .iter()
             .flat_map(|mob| mob.cities.iter())

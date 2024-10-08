@@ -79,6 +79,6 @@ members = [
     "luhn_algorithm",
     
     # POINTERS
-    "box_it", "borrow_box", "box_recursion",
+    "box_it", "borrow_box", "box_recursion", "how_many_references",
 ]
 resolver = "2"
