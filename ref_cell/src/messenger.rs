@@ -1,5 +1,4 @@
-use std::{cell::RefCell, rc::Rc};
-use crate::Worker;
+pub use std::{cell::RefCell, rc::Rc};
 
 pub trait Logger {
     fn warning(&self, msg: &str);
@@ -14,7 +13,7 @@ pub struct Tracker<'l> {
 }
 
 impl<'l> Tracker<'l> {
-    pub fn new(logger: &'l Worker, max: usize) -> Self {
+    pub fn new(logger: &'l dyn Logger, max: usize) -> Self {
         let value = RefCell::new(0);
 
         Self { logger, value, max }
@@ -30,7 +29,7 @@ impl<'l> Tracker<'l> {
                 )
                 .as_str(),
             ),
-            _ => println!("Not working...")
+            _ => println!("Not working..."),
         };
     }
 
