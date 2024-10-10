@@ -15,7 +15,7 @@ fn main() -> Result<(), Error> {
     game.roll(10)?; // frame 9: strike
     game.roll(10)?; // frame 10: strike
     game.roll(2)?; // fill ball 1
-    println!("{}", game.roll(8).is_ok()); // fill ball 2
+    game.roll(8)?; // fill ball 2
     println!("{:?}", game.score());
     // game.roll(0)?;
 
