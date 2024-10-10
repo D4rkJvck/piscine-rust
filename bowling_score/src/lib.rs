@@ -40,11 +40,7 @@ impl BowlingGame {
         match pins {
             // Fill Balls______________________________
             p if self.frame == 9 => {
-                if self.score[self.frame] == 0 {
-                    self.frame_score(p);
-                } else {
-                    self.score[self.frame] += p;
-                }
+                self.score[self.frame] += p;
                 
                 if self.fill_balls == 0 {
                     self.complete = true;
