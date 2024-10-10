@@ -7,11 +7,17 @@ pub struct Node<T> {
 //_________________________
 //
 #[derive(Clone, Debug)]
-pub struct List<T> {
+pub struct List<T>
+where
+    T: Clone,
+{
     pub head: Option<Node<T>>,
 }
 
-impl<T> List<T> {
+impl<T> List<T>
+where
+    T: Clone,
+{
     pub fn new() -> Self {
         Self { head: None }
     }
@@ -29,17 +35,22 @@ impl<T> List<T> {
     }
 
     pub fn pop(&mut self) {
-        let last = self.head.take().unwrap();
-        self.head = Some(*last.next.unwrap())
+        match self.head.take() {
+            Some(node) => match node.next {
+                Some(next) => self.head = Some(*next),
+                None => self.head = None,
+            },
+            None => self.head = None,
+        }
     }
 
     pub fn len(&self) -> usize {
-        let mut current = self.head.as_ref().unwrap();
-        let mut size = 1;
+        let mut size = 0;
+        let mut list = self.clone();
 
-        while !current.next.is_none() {
+        while let Some(_) = list.head {
             size += 1;
-            current = current.next.as_ref().unwrap();
+            list.pop();
         }
 
         size
