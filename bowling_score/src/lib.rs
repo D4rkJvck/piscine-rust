@@ -172,10 +172,6 @@ impl BowlingGame {
                 *pins = 10;
                 *roll -= 1;
                 *frame += 1;
-
-                if *frame == 9 {
-                    *extra = 1
-                };
             }
 
             _ => {}
