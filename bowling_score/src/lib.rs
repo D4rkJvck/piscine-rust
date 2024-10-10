@@ -180,15 +180,17 @@ impl BowlingGame {
         Ok(())
     }
 
+    //----------------------------------------------------------------
+    
     pub fn score(&mut self) -> Option<u16> {
         if !self.complete {
             return None;
         };
-
+        
         Some(self.score.iter().map(|f| f.0 + f.1).sum())
     }
-
-    //----------------------------------------------------------------
+    
+    //----------------------------------------
 
     #[allow(unused)]
     fn frame_score(&mut self, p: u16) {
