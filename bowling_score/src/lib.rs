@@ -57,7 +57,7 @@ impl BowlingGame {
                         score[*frame].1 += p;
                         *bonus -= 1;
                     };
-                    
+
                     *complete = true;
                 } else {
                     score[*frame].1 += p;
@@ -74,7 +74,6 @@ impl BowlingGame {
 
                     *extra -= 1;
                 }
-                return Ok(());
             }
 
             // Strike_____________________________________________________________
@@ -186,8 +185,6 @@ impl BowlingGame {
     }
 
     pub fn score(&mut self) -> Option<u16> {
-        println!("{:?}", self);
-
         if !self.complete {
             return None;
         };
