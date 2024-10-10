@@ -77,8 +77,14 @@ members = [
     "diamond_creation",
     "spelling",
     "luhn_algorithm",
-    
+
     # POINTERS
-    "box_it", "borrow_box", "box_recursion", "how_many_references", "ref_cell", "drop_the_thread", "bowling_score",
+    "box_it",
+    "borrow_box",
+    "box_recursion",
+    "how_many_references",
+    "ref_cell",
+    "drop_the_thread",
+    "bowling_score",
 ]
 resolver = "2"

@@ -32,7 +32,7 @@ impl BowlingGame {
         if self.complete {
             return Err(Error::GameComplete);
         }
-        
+
         if pins > self.pins {
             return Err(Error::NotEnoughPinsLeft);
         }
@@ -40,14 +40,27 @@ impl BowlingGame {
         match pins {
             // Fill Balls______________________________
             p if self.frame == 9 => {
-                self.frame_score(p);
-                
-                if self.fill_balls == 0 {
-                    self.complete = true;
-                } else {
-                    self.fill_balls -= 1;
-                }
+                self.pins -= p;
 
+                match self.fill_balls {
+                    0 => {
+                        self.complete = true;
+                        return Ok(());
+                    }
+                    1 => self.frame_score(pins),
+                    2 => {
+                        if self.pins == 10 {
+                            self.frame_score(p);
+                        } else {
+                            self.frame_score(p);
+                            self.complete = true;
+                            return Ok(())
+                        }
+                    }
+                    _ => {}
+                }
+                
+                self.fill_balls -= 1;
             }
 
             // Strike_____________________________________________________________
@@ -56,7 +69,7 @@ impl BowlingGame {
 
                 self.bonus += 2;
                 self.frame += 1;
-                
+
                 if self.frame == 9 {
                     self.fill_balls = 2
                 };
@@ -77,13 +90,13 @@ impl BowlingGame {
                 if self.pins == p {
                     self.bonus += 1
                 };
-                
+
                 self.frame += 1;
-                
+
                 if self.pins == p && self.frame == 9 {
                     self.fill_balls = 1
                 };
-                
+
                 self.pins = 10;
                 self.roll -= 1;
             }
@@ -98,9 +111,9 @@ impl BowlingGame {
 
     pub fn score(&mut self) -> Option<u16> {
         println!("Score: {:?}", self.score);
-        if !self.complete {
-            return None;
-        };
+        // if !self.complete {
+        //     return None;
+        // };
 
         Some(self.score.iter().sum())
     }
