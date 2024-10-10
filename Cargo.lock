@@ -48,6 +48,10 @@ name = "binary_search"
 version = "0.1.0"
 
 [[package]]
+name = "blood_types"
+version = "0.1.0"
+
+[[package]]
 name = "borrow"
 version = "0.1.0"
 
