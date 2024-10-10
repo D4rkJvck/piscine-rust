@@ -15,11 +15,9 @@ fn main() -> Result<(), Error> {
     game.roll(10)?; // frame 9: strike
     game.roll(10)?; // frame 10: strike
     game.roll(2)?; // fill ball 1
-    game.roll(8)?; // fill ball 2
+    println!("{}", game.roll(8).is_ok()); // fill ball 2
     println!("{:?}", game.score());
-    game.roll(0)?;
-    println!("{:?}", game.score());
-    // println!("{:?}", game.score());
+    // game.roll(0)?;
 
     let mut perfect_game = BowlingGame::new();
     for _ in 0..12 {
