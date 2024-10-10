@@ -174,7 +174,7 @@ impl BowlingGame {
                 *frame += 1;
 
                 if *frame == 9 {
-                    *extra = 2
+                    *extra = 1
                 };
             }
 
