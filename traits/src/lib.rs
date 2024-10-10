@@ -25,7 +25,7 @@ impl Display for Player {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         writeln!(f, "{}", self.name)?;
         writeln!(f, "Strength: {}, Score: {}, Money: {}", self.strength, self.score, self.money)?;
-        writeln!(f, "Weapons: {:?}", self.weapons)?;
+        write!(f, "Weapons: {:?}", self.weapons)?;
 
         Ok(())
     }
