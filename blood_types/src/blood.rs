@@ -1,10 +1,14 @@
 use std::str::FromStr;
 
 #[derive(Debug)]
-pub enum AntigenError {
-    Invalid,
+pub enum BloodTypeError {
+    Invalid(String),
     // TODO: Rest of potential `error` types
 }
+
+
+//________________________________________________________________
+//
 
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone)]
 pub enum Antigen {
@@ -15,21 +19,23 @@ pub enum Antigen {
 }
 
 impl FromStr for Antigen {
-    type Err = AntigenError;
+    type Err = BloodTypeError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self::O)
+        match s {
+            "A" => Ok(Self::A),
+            "B" => Ok(Self::B),
+            "AB" => Ok(Self::AB),
+            "O" => Ok(Self::O),
+            _ => Err(BloodTypeError::Invalid(
+                "Invalid blood antigen value".to_string(),
+            )),
+        }
     }
 }
 
 //________________________________________________________________
 //
-
-#[derive(Debug)]
-pub enum RhFactorError {
-    Invalid,
-    // TODO: Rest of potential `error` types
-}
 
 #[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Clone)]
 pub enum RhFactor {
@@ -38,9 +44,15 @@ pub enum RhFactor {
 }
 
 impl FromStr for RhFactor {
-    type Err = RhFactorError;
+    type Err = BloodTypeError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        Ok(Self::Negative)
+        match s {
+            "+" => Ok(Self::Positive),
+            "-" => Ok(Self::Negative),
+            _ => Err(BloodTypeError::Invalid(
+                "Invalid Rhesus factor value".to_string()
+            ))
+        }
     }
 }
