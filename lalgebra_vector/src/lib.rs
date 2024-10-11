@@ -9,20 +9,21 @@ impl<T> Add for Vector<T>
 where
     T: Scalar + Sum + Clone,
 {
-    type Output = Option<Vec<T>>;
+    type Output = Option<Vector<T>>;
 
     fn add(self, rhs: Self) -> Self::Output {
         if self.0.len() != rhs.0.len() {
             return None;
         };
 
-        Some(
-            self.0
-                .iter()
-                .zip(rhs.0.iter())
-                .map(|(a, b)| a.clone() + b.clone())
-                .collect::<Vec<T>>(),
-        )
+        let tab = self
+            .0
+            .iter()
+            .zip(rhs.0.iter())
+            .map(|(a, b)| a.clone() + b.clone())
+            .collect::<Vec<T>>();
+
+        Some(Vector(tab))
     }
 }
 
