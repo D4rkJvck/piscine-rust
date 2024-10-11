@@ -8,7 +8,9 @@ pub struct ThreeDVector<T> {
 }
 
 impl<T> Add for ThreeDVector<T>
-where T: Add<Output = T> {
+where
+    T: Add<Output = T>,
+{
     type Output = Self;
 
     fn add(self, rhs: Self) -> Self::Output {
@@ -21,7 +23,9 @@ where T: Add<Output = T> {
 }
 
 impl<T> Sub for ThreeDVector<T>
-where T: Sub<Output = T> {
+where
+    T: Sub<Output = T>,
+{
     type Output = Self;
 
     fn sub(self, rhs: Self) -> Self::Output {
