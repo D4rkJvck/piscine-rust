@@ -22,13 +22,13 @@ pub enum RomanDigit {
 impl From<u32> for RomanDigit {
     fn from(value: u32) -> Self {
         match value {
-            1000..4000 => Self::M,
-            500..1000 => Self::D,
-            100..500 => Self::C,
-            50..100 => Self::L,
-            10..50 => Self::X,
-            5..10 => Self::V,
-            1..5 => Self::I,
+            1000..=3999 => Self::M,
+            500..=999 => Self::D,
+            100..=499 => Self::C,
+            50..=99 => Self::L,
+            10..=49 => Self::X,
+            5..=9 => Self::V,
+            1..=4 => Self::I,
             _ => Self::Nulla,
         }
     }
@@ -51,8 +51,8 @@ impl From<u32> for RomanNumber {
 
         while shadow > 0 {
             let round = match shadow {
-                900..1000 | 400..500 => 100,
-                90..100 | 40..50 => 10,
+                900..=999 | 400..500 => 100,
+                90..=99 | 40..50 => 10,
                 9 | 4 => 1,
                 _ => 0,
             };
@@ -66,11 +66,11 @@ impl From<u32> for RomanNumber {
 
             shadow -= match shadow {
                 1000.. => 1000,
-                500..1000 => 500,
-                100..500 => 100,
-                50..100 => 50,
-                10..50 => 10,
-                5..10 => 5,
+                500..=999 => 500,
+                100..=499 => 100,
+                50..=99 => 50,
+                10..=49 => 10,
+                5..=9 => 5,
                 ..5 => 1,
             };
         }
