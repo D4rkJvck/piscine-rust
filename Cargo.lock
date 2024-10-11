@@ -306,6 +306,13 @@ name = "lalgebra_scalar"
 version = "0.1.0"
 
 [[package]]
+name = "lalgebra_vector"
+version = "0.1.0"
+dependencies = [
+ "lalgebra_scalar",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.159"
 source = "registry+https://github.com/rust-lang/crates.io-index"
