@@ -22,13 +22,13 @@ pub enum RomanDigit {
 impl From<u32> for RomanDigit {
     fn from(value: u32) -> Self {
         match value {
-            v if v >= 1000 => Self::M,
-            v if v >= 500 => Self::D,
-            v if v >= 100 => Self::C,
-            v if v >= 50 => Self::L,
-            v if v >= 10 => Self::X,
-            v if v >= 5 => Self::V,
-            v if v >= 1 => Self::I,
+            1000..4000 => Self::M,
+            500..1000 => Self::D,
+            100..500 => Self::C,
+            50..100 => Self::L,
+            10..50 => Self::X,
+            5..10 => Self::V,
+            1..5 => Self::I,
             _ => Self::Nulla,
         }
     }
@@ -50,32 +50,28 @@ impl From<u32> for RomanNumber {
         };
 
         while shadow > 0 {
-            shadow = match shadow {
-                v if v / 900 > 0 || v / 400 > 0 => {
-                    table.push(RomanDigit::from(100));
-                    v + 100
-                }
-                v if v / 90 > 0 || v / 40 > 0 => {
-                    table.push(RomanDigit::from(10));
-                    v + 10
-                }
-                9 | 4 => {
-                    table.push(RomanDigit::from(1));
-                    shadow + 1
-                }
-                v => v,
+            let round = match shadow {
+                900..1000 | 400..500 => 100,
+                90..100 | 40..50 => 10,
+                9 | 4 => 1,
+                _ => 0,
             };
 
+            if round != 0 {
+                table.push(RomanDigit::from(round));
+                shadow += round;
+            }
+            
             table.push(RomanDigit::from(shadow));
 
-            shadow = match shadow {
-                v if v / 1000 > 0 => v - 1000,
-                v if v / 500 > 0 => v - 500,
-                v if v / 100 > 0 => v - 100,
-                v if v / 50 > 0 => v - 50,
-                v if v / 10 > 0 => v - 10,
-                v if v / 5 > 0 => v - 5,
-                v => v - 1,
+            shadow -= match shadow {
+                1000.. => 1000,
+                500..1000 => 500,
+                100..500 => 100,
+                50..100 => 50,
+                10..50 => 10,
+                5..10 => 5,
+                ..5 => 1,
             };
         }
 
