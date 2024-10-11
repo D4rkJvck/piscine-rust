@@ -7,7 +7,7 @@ pub trait Scalar:
     + Mul<Output = Self>
     + Div<Output = Self>
 {
-    type Item;
-    fn zero() -> Self::Item;
-    fn one() -> Self::Item;
+    type Num;
+    fn zero() -> Self::Num;
+    fn one() -> Self::Num;
 }
