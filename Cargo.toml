@@ -88,6 +88,6 @@ members = [
     "bowling_score",
 
     # TRAITS
-    "generics", "generics_list", "easy_traits", "traits", "blood_types",
+    "generics", "generics_list", "easy_traits", "traits", "blood_types", "vector_operations",
 ]
 resolver = "2"
