@@ -7,7 +7,7 @@ pub fn commits_per_author(data: &JsonValue) -> HashMap<String, u32> {
 
     if data.is_array() {
         let _ = &data.members().into_iter().for_each(|elem| {
-            let author_name = match &elem["commit"]["author"]["name"] {
+            let author_name = match &elem["author"]["login"] {
                 JsonValue::Short(name) => name.to_string(),
                 JsonValue::String(name) => name.to_owned(),
                 _ => "Not Found".to_string(),
@@ -25,13 +25,13 @@ pub fn commits_per_week(data: &JsonValue) -> HashMap<String, u32> {
 
     if data.is_array() {
         let _ = &data.members().into_iter().for_each(|elem| {
-            let commit_date = match &elem["commit"]["committer"]["date"] {
+            let commit_date = match &elem["commit"]["author"]["date"] {
                 JsonValue::Short(date) => date.to_string(),
                 JsonValue::String(date) => date.to_owned(),
                 _ => "Not Found".to_string(),
             };
 
-            let date = DateTime::parse_from_rfc3339(&commit_date).unwrap_or_default();
+            let date = DateTime::parse_from_rfc3339(&commit_date).expect("Invalid format!");
             let year = date.year();
             let week = date.iso_week().week();
 
