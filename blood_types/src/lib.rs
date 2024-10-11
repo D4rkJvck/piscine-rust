@@ -76,7 +76,7 @@ impl Debug for BloodType {
 
 impl BloodType {
     pub fn can_receive_from(&self, other: &BloodType) -> bool {
-        self.recipients().contains(&other)
+        self.donors().contains(&other) && other.recipients().contains(&self)
     }
 
     pub fn donors(&self) -> Vec<Self> {
@@ -136,7 +136,7 @@ impl BloodType {
 
         match (self.antigen.clone(), self.rh_factor.clone()) {
             (AB, Positive) => vec![
-                Self {antigen: A, rh_factor: Positive}
+                Self {antigen: AB, rh_factor: Positive}
                 ],
             (AB, Negative) => vec![
                 Self {antigen: A, rh_factor: Negative},
