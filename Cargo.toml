@@ -85,7 +85,7 @@ members = [
     "how_many_references",
     "ref_cell",
     "drop_the_thread",
-    "bowling_score", # TODO: FAILED!
+    "bowling_score",       # TODO: FAILED!
 
     # TRAITS
     "generics",
@@ -97,5 +97,6 @@ members = [
     "roman_numbers",
     "lalgebra_scalar",
     "lalgebra_vector",
+    "commits_stats",
 ]
 resolver = "2"

@@ -157,6 +157,14 @@ name = "collect"
 version = "0.1.0"
 
 [[package]]
+name = "commits_stats"
+version = "0.1.0"
+dependencies = [
+ "chrono",
+ "json",
+]
+
+[[package]]
 name = "copy"
 version = "0.1.0"
 
