@@ -366,6 +366,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "minesweeper"
+version = "0.1.0"
+
+[[package]]
 name = "mobs"
 version = "0.1.0"
 
