@@ -1,4 +1,4 @@
-use std::ops::{Add, Div, Mul, Sub};
+pub use std::ops::{Add, Div, Mul, Sub};
 
 pub trait Scalar:
     Clone

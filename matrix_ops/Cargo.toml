@@ -1,0 +1,8 @@
+[package]
+name = "matrix_ops"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+# lalgebra_scalar = { package = "lalgebra_scalar", path = "../lalgebra_scalar" }
+matrix = { package = "matrix", path = "../matrix" }

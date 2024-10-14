@@ -102,5 +102,6 @@ members = [
 
     # LIFETIMES
     "matrix",
+    "matrix_ops",
 ]
 resolver = "2"
