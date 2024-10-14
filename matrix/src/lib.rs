@@ -1,6 +1,6 @@
 pub use lalgebra_scalar::Scalar;
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq, Eq)]
 pub struct Matrix<T>(pub Vec<Vec<T>>);
 
 impl<T: Scalar<Num = T>> Matrix<T> {
