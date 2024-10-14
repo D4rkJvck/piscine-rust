@@ -14,6 +14,8 @@ impl Scalar for u32 {
     }
 }
 
+//-------------------------------------
+
 impl Scalar for u64 {
     type Num = u64;
 
@@ -25,6 +27,8 @@ impl Scalar for u64 {
         1
     }
 }
+
+//-------------------------------------
 
 impl Scalar for i32 {
     type Num = i32;
@@ -38,6 +42,8 @@ impl Scalar for i32 {
     }
 }
 
+//-------------------------------------
+
 impl Scalar for i64 {
     type Num = i64;
 
@@ -50,6 +56,8 @@ impl Scalar for i64 {
     }
 }
 
+//-------------------------------------
+
 impl Scalar for f32 {
     type Num = f32;
 
@@ -61,6 +69,8 @@ impl Scalar for f32 {
         1.0
     }
 }
+
+//-------------------------------------
 
 impl Scalar for f64 {
     type Num = f64;

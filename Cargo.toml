@@ -97,6 +97,10 @@ members = [
     "roman_numbers",
     "lalgebra_scalar",
     "lalgebra_vector",
-    "commits_stats", "minesweeper",
+    "commits_stats",
+    "minesweeper",
+
+    # LIFETIMES
+    "matrix",
 ]
 resolver = "2"

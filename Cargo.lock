@@ -355,6 +355,13 @@ dependencies = [
 ]
 
 [[package]]
+name = "matrix"
+version = "0.1.0"
+dependencies = [
+ "lalgebra_scalar",
+]
+
+[[package]]
 name = "matrix_transposition"
 version = "0.1.0"
 
