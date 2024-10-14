@@ -1,5 +1,3 @@
-use std::ops::{Add, Sub};
-
 pub use matrix::*;
 
 #[derive(Debug, PartialEq, Eq)]
@@ -15,7 +13,7 @@ where
         let mut matrix: Vec<Vec<T>> = Vec::new();
 
         for (vec1, vec2) in self.0.iter().zip(rhs.0.iter()) {
-            if vec1.len()!= vec2.len() {
+            if vec1.len() != vec2.len() {
                 return None;
             }
 
@@ -35,7 +33,7 @@ where
 //----------------------------------------------------------------
 
 impl<T> Sub for Matrix<T>
-where 
+where
     T: Scalar<Num = T> + Sub<Output = T> + Copy,
 {
     type Output = Option<Self>;
@@ -44,7 +42,7 @@ where
         let mut matrix: Vec<Vec<T>> = Vec::new();
 
         for (vec1, vec2) in self.0.iter().zip(rhs.0.iter()) {
-            if vec1.len()!= vec2.len() {
+            if vec1.len() != vec2.len() {
                 return None;
             }
 

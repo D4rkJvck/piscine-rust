@@ -1,4 +1,4 @@
-use std::{iter::Sum, ops::Add};
+use std::iter::Sum;
 
 pub use lalgebra_scalar::*;
 
