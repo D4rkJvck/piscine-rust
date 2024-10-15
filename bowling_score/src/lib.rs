@@ -54,12 +54,12 @@ impl BowlingGame {
                         } else {
                             self.frame_score(p);
                             self.complete = true;
-                            return Ok(())
+                            return Ok(());
                         }
                     }
                     _ => {}
                 }
-                
+
                 self.fill_balls -= 1;
             }
 

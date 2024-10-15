@@ -6,7 +6,6 @@ pub enum BloodTypeError {
     // TODO: Rest of potential `error` types
 }
 
-
 //________________________________________________________________
 //
 
@@ -51,8 +50,8 @@ impl FromStr for RhFactor {
             "+" => Ok(Self::Positive),
             "-" => Ok(Self::Negative),
             _ => Err(BloodTypeError::Invalid(
-                "Invalid Rhesus factor value".to_string()
-            ))
+                "Invalid Rhesus factor value".to_string(),
+            )),
         }
     }
 }

@@ -1,17 +1,16 @@
-use events::Event::*;
 use chrono::Duration;
+use events::Event::*;
 
 fn main() {
-	let remainder = Remainder("Go to the doctor");
-	println!("{}", remainder.notify());
-	let registration = Registration(Duration::seconds(49094));
-	println!("{}", registration.notify());
-	let appointment = Appointment("Go to the doctor");
-	println!("{}", appointment.notify());
-	let holiday = Holiday;
-	println!("{}", holiday.notify());
+    let remainder = Remainder("Go to the doctor");
+    println!("{}", remainder.notify());
+    let registration = Registration(Duration::seconds(49094));
+    println!("{}", registration.notify());
+    let appointment = Appointment("Go to the doctor");
+    println!("{}", appointment.notify());
+    let holiday = Holiday;
+    println!("{}", holiday.notify());
 }
-
 
 // $ cargo run
 // (Bottom, 50, [38;2;50;50;50mGo to the doctor[0m)

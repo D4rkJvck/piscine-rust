@@ -1,5 +1,5 @@
-use std::rc::Rc;
 use drop_the_thread::*;
+use std::rc::Rc;
 
 fn main() {
     let worker = Workers::new();
@@ -19,7 +19,15 @@ fn main() {
 
     drop(thread2_clone);
 
-    println!("{:?}", (worker.is_dropped(id2), id2, &worker.drops, Rc::strong_count(&thread2)));
+    println!(
+        "{:?}",
+        (
+            worker.is_dropped(id2),
+            id2,
+            &worker.drops,
+            Rc::strong_count(&thread2)
+        )
+    );
 }
 
 // $ cargo run

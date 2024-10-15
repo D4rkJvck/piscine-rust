@@ -39,7 +39,7 @@ where
             return None;
         }
 
-        let mut matrix: Vec<Vec<T>> =vec![vec![T::zero(); rows]; cols];
+        let mut matrix: Vec<Vec<T>> = vec![vec![T::zero(); rows]; cols];
 
         for i in 0..rows {
             for j in 0..cols {

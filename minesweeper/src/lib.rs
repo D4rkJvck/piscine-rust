@@ -8,7 +8,6 @@ pub fn solve_board(minefield: &[&str]) -> Vec<String> {
             let mut mine_count = 0;
 
             if col == ' ' {
-
                 // IDEA:`Up`
                 if i > 0 {
                     if minefield[i - 1].chars().nth(j).unwrap() == '*' {
@@ -39,7 +38,7 @@ pub fn solve_board(minefield: &[&str]) -> Vec<String> {
 
                 // IDEA:`Up Left`
                 if i > 0 && j > 0 {
-                    if minefield[i -1].chars().nth(j - 1).unwrap() == '*' {
+                    if minefield[i - 1].chars().nth(j - 1).unwrap() == '*' {
                         mine_count += 1;
                     }
                 }
@@ -70,7 +69,6 @@ pub fn solve_board(minefield: &[&str]) -> Vec<String> {
                 } else {
                     res_str.push(' ');
                 }
-                
             } else {
                 res_str.push(col);
             }

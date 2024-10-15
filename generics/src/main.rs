@@ -1,8 +1,8 @@
 use generics::*;
 
 fn main() {
-	println!("{}", identity("Hello, world!"));
-	println!("{}", identity(3));
+    println!("{}", identity("Hello, world!"));
+    println!("{}", identity(3));
 }
 
 // $ cargo run

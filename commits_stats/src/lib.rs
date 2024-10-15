@@ -1,4 +1,4 @@
-use chrono::{DateTime, Datelike };
+use chrono::{DateTime, Datelike};
 pub use json::JsonValue;
 pub use std::collections::HashMap;
 

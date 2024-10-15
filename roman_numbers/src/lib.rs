@@ -61,7 +61,7 @@ impl From<u32> for RomanNumber {
                 table.push(RomanDigit::from(round));
                 shadow += round;
             }
-            
+
             table.push(RomanDigit::from(shadow));
 
             shadow -= match shadow {

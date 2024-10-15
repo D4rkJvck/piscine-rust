@@ -25,7 +25,6 @@ impl WorkEnvironment {
             next: self.grade.take(),
         });
 
-        
         self.grade = Some(new_worker);
     }
 

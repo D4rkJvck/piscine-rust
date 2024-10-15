@@ -3,7 +3,8 @@ pub mod blood;
 use std::{
     cmp::Ordering,
     fmt::{self, Debug, Formatter},
-    str::FromStr, vec,
+    str::FromStr,
+    vec,
 };
 
 pub use blood::*;
@@ -84,49 +85,128 @@ impl BloodType {
         use RhFactor::*;
 
         match (self.antigen.clone(), self.rh_factor.clone()) {
-            (O, Negative) => vec![
-                Self {antigen: O, rh_factor: Negative}
-                ],
+            (O, Negative) => vec![Self {
+                antigen: O,
+                rh_factor: Negative,
+            }],
             (O, Positive) => vec![
-                Self {antigen: O, rh_factor: Negative},
-                Self {antigen: O, rh_factor: Positive}
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Positive,
+                },
             ],
             (A, Negative) => vec![
-                Self {antigen: A, rh_factor: Negative},
-                Self { antigen: O, rh_factor: Negative,},
+                Self {
+                    antigen: A,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
             ],
             (A, Positive) => vec![
-                Self {antigen: A, rh_factor: Negative},
-                Self { antigen: A, rh_factor: Positive,},
-                Self { antigen: O, rh_factor: Negative,},
-                Self { antigen: O, rh_factor: Positive,},
+                Self {
+                    antigen: A,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Positive,
+                },
             ],
             (B, Negative) => vec![
-                Self {antigen: B, rh_factor: Negative},
-                Self { antigen: O, rh_factor: Negative,},
+                Self {
+                    antigen: B,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
             ],
             (B, Positive) => vec![
-                Self {antigen: B, rh_factor: Negative},
-                Self { antigen: B, rh_factor: Positive,},
-                Self { antigen: O, rh_factor: Negative,},
-                Self { antigen: O, rh_factor: Positive,}
+                Self {
+                    antigen: B,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Positive,
+                },
             ],
             (AB, Negative) => vec![
-                Self {antigen: O, rh_factor: Negative},
-                Self {antigen: A, rh_factor: Negative,},
-                Self {antigen: B, rh_factor: Negative},
-                Self {antigen: AB, rh_factor: Negative,}
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Negative,
+                },
             ],
             (AB, Positive) => vec![
-                Self {antigen: O, rh_factor: Negative},
-                Self {antigen: O, rh_factor: Positive},
-                Self {antigen: A, rh_factor: Positive},
-                Self {antigen: A, rh_factor: Negative},
-                Self {antigen: B, rh_factor: Positive},
-                Self {antigen: B, rh_factor: Negative},
-                Self {antigen: AB, rh_factor: Positive},
-                Self {antigen: AB, rh_factor: Negative},
-            ]
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Negative,
+                },
+            ],
         }
     }
 
@@ -135,49 +215,128 @@ impl BloodType {
         use RhFactor::*;
 
         match (self.antigen.clone(), self.rh_factor.clone()) {
-            (AB, Positive) => vec![
-                Self {antigen: AB, rh_factor: Positive}
-                ],
+            (AB, Positive) => vec![Self {
+                antigen: AB,
+                rh_factor: Positive,
+            }],
             (AB, Negative) => vec![
-                Self {antigen: A, rh_factor: Negative},
-                Self {antigen: AB, rh_factor: Positive}
+                Self {
+                    antigen: A,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
             ],
             (A, Positive) => vec![
-                Self {antigen: A, rh_factor: Positive},
-                Self { antigen: AB, rh_factor: Positive,},
+                Self {
+                    antigen: A,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
             ],
             (A, Negative) => vec![
-                Self {antigen: A, rh_factor: Negative},
-                Self { antigen: A, rh_factor: Positive,},
-                Self { antigen: AB, rh_factor: Negative,},
-                Self { antigen: AB, rh_factor: Positive,},
+                Self {
+                    antigen: A,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
             ],
             (B, Positive) => vec![
-                Self {antigen: B, rh_factor: Positive},
-                Self { antigen: AB, rh_factor: Positive,},
+                Self {
+                    antigen: B,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
             ],
             (B, Negative) => vec![
-                Self {antigen: B, rh_factor: Negative},
-                Self { antigen: B, rh_factor: Positive,},
-                Self { antigen: AB, rh_factor: Negative,},
-                Self { antigen: AB, rh_factor: Positive,}
+                Self {
+                    antigen: B,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
             ],
             (O, Positive) => vec![
-                Self {antigen: O, rh_factor: Positive},
-                Self {antigen: A, rh_factor: Positive,},
-                Self {antigen: B, rh_factor: Positive},
-                Self {antigen: AB, rh_factor: Positive,}
+                Self {
+                    antigen: O,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
             ],
             (O, Negative) => vec![
-                Self {antigen: O, rh_factor: Negative},
-                Self {antigen: O, rh_factor: Positive},
-                Self {antigen: A, rh_factor: Positive},
-                Self {antigen: A, rh_factor: Negative},
-                Self {antigen: B, rh_factor: Positive},
-                Self {antigen: B, rh_factor: Negative},
-                Self {antigen: AB, rh_factor: Positive},
-                Self {antigen: AB, rh_factor: Negative},
-            ]
+                Self {
+                    antigen: O,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: O,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: A,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: B,
+                    rh_factor: Negative,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Positive,
+                },
+                Self {
+                    antigen: AB,
+                    rh_factor: Negative,
+                },
+            ],
         }
     }
 }

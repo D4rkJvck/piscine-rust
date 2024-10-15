@@ -17,7 +17,6 @@ fn main() {
     println!("{:?}", nested);
 }
 
-
 // $ cargo run
 // {}
 // {'b': 1, 'a': 22, 'c': 10}
