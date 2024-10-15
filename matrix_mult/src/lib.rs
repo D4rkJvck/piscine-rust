@@ -44,7 +44,7 @@ where
                 let v1 = Vector(self.row(i));
                 let v2 = Vector(rhs.col(j));
 
-                matrix[i][j] = v1.dot(&v2).unwrap();
+                matrix[i][j] = v1.dot(&v2)?;
             }
         }
 
