@@ -102,6 +102,6 @@ members = [
 
     # LIFETIMES
     "matrix",
-    "matrix_ops", "matrix_mult", "lifetimes", "delete_prefix", "border_cross", "events",
+    "matrix_ops", "matrix_mult", "lifetimes", "delete_prefix", "border_cross", "events", "macro_map",
 ]
 resolver = "2"
