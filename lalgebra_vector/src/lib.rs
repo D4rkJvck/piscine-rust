@@ -1,6 +1,5 @@
-pub use std::iter::Sum;
-
 pub use lalgebra_scalar::*;
+pub use std::iter::Sum;
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct Vector<T: Scalar>(pub Vec<T>);

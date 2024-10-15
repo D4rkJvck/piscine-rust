@@ -32,19 +32,21 @@ where
     type Output = Option<Self>;
 
     fn mul(self, rhs: Self) -> Self::Output {
-        if !self.number_of_cols() == rhs.number_of_rows() {
+        let rows = self.number_of_rows();
+        let cols = rhs.number_of_cols();
+
+        if !rows == cols {
             return None;
         }
 
-        let mut matrix: Vec<Vec<T>> =
-            vec![vec![T::zero(); self.number_of_rows()]; rhs.number_of_cols()];
+        let mut matrix: Vec<Vec<T>> =vec![vec![T::zero(); rows]; cols];
 
-        for i in 0..self.number_of_rows() {
-            for j in 0..rhs.number_of_cols() {
-                let v1 = Vector(self.row(i));
-                let v2 = Vector(rhs.col(j));
+        for i in 0..rows {
+            for j in 0..cols {
+                let vec1 = Vector(self.row(i));
+                let vec2 = Vector(rhs.col(j));
 
-                matrix[i][j] = v1.dot(&v2)?;
+                matrix[i][j] = vec1.dot(&vec2)?;
             }
         }
 
