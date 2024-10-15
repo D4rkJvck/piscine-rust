@@ -43,7 +43,12 @@ impl<'a> Event<'a> {
                 size: 30,
                 color: (255, 2, 22),
                 position: Position::Top,
-                content: format!("You have {} left before the registration ends", duration),
+                content: format!(
+                    "You have {}H:{}M:{}S left before the registration ends",
+                    duration.num_hours(),
+                    duration.num_minutes() % 60,
+                    duration.num_seconds() % 60,
+                ),
             },
             Self::Appointment(text) => Notification {
                 size: 100,
@@ -75,11 +80,13 @@ pub struct Notification {
 impl Display for Notification {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
         let (r, g, b) = self.color;
-        
+
         write!(
             f,
             "({:?}, {}, {})",
-            self.position, self.size, self.content.truecolor(r, g, b)
+            self.position,
+            self.size,
+            self.content.truecolor(r, g, b)
         )
     }
 }
