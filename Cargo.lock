@@ -365,7 +365,7 @@ dependencies = [
 name = "matrix_mult"
 version = "0.1.0"
 dependencies = [
- "matrix_ops",
+ "lalgebra_vector",
 ]
 
 [[package]]

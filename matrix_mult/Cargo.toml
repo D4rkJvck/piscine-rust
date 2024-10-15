@@ -4,4 +4,4 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-matrix_ops = { package = "matrix_ops", path = "../matrix_ops" }
+lalgebra_vector = { package = "lalgebra_vector", path = "../lalgebra_vector" }
