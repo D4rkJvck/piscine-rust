@@ -275,6 +275,10 @@ name = "generics_list"
 version = "0.1.0"
 
 [[package]]
+name = "get_products"
+version = "0.1.0"
+
+[[package]]
 name = "getrandom"
 version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
