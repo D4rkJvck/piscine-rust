@@ -582,6 +582,13 @@ name = "roman_numbers"
 version = "0.1.0"
 
 [[package]]
+name = "roman_numbers_iter"
+version = "0.1.0"
+dependencies = [
+ "roman_numbers",
+]
+
+[[package]]
 name = "rot"
 version = "0.1.0"
 
