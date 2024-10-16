@@ -112,6 +112,6 @@ members = [
 
     # FEATURES
     "closures",
-    "sales", "adding",
+    "sales", "adding", "adding_twice",
 ]
 resolver = "2"
