@@ -1,4 +1,8 @@
 pub fn get_products(vec: Vec<usize>) -> Vec<usize> {
+    if vec.is_empty() {
+        return vec![]
+    };
+    
     let mut result = vec![];
 
     for int in vec.iter() {
