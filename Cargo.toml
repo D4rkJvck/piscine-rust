@@ -109,5 +109,8 @@ members = [
     "border_cross",
     "events",
     "macro_map",
+
+    # FEATURES
+    "closures",
 ]
 resolver = "2"
