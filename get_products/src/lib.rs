@@ -3,19 +3,12 @@ pub fn get_products(vec: Vec<usize>) -> Vec<usize> {
         return vec![]
     };
     
-    let mut result = vec![];
+    let product: usize = vec
+        .iter()
+        .product();
 
-    for int in vec.iter() {
-        let mut product = 1;
-
-        for other in vec.iter() {
-            if other != int {
-                product *= other
-            }
-        }
-
-        result.push(product);
-    }
-
-    result
+    vec
+        .iter()
+        .map(|&x| product / x)
+        .collect()
 }
