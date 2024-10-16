@@ -564,6 +564,10 @@ name = "rot"
 version = "0.1.0"
 
 [[package]]
+name = "sales"
+version = "0.1.0"
+
+[[package]]
 name = "scalar"
 version = "0.1.0"
 
