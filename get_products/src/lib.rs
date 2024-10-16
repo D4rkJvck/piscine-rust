@@ -1,5 +1,5 @@
 pub fn get_products(vec: Vec<usize>) -> Vec<usize> {
-    if vec.is_empty() {
+    if vec.len() < 2 {
         return vec![]
     };
     
