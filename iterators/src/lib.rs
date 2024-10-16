@@ -27,5 +27,12 @@ impl Collatz {
 }
 
 pub fn collatz(n: u64) -> usize {
-    Collatz::new(n).count()
+    let mut count = 0;
+    let mut collatz = Collatz::new(n);
+
+    while let Some(_) = collatz.next() {
+        count += 1;
+    }
+
+    count
 }
