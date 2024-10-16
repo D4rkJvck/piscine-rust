@@ -111,6 +111,7 @@ members = [
     "macro_map",
 
     # FEATURES
-    "closures", "sales",
+    "closures",
+    "sales",
 ]
 resolver = "2"
