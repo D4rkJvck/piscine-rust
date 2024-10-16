@@ -51,7 +51,7 @@ impl Cart {
     
         let discount: f32 = receipt
             .iter()
-            .filter(|&p| *p <= receipt[0])
+            .filter(|&p| *p == receipt[0])
             .sum();
     
         let percentage = discount / total;
