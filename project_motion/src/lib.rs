@@ -2,7 +2,7 @@ mod utils;
 
 use utils::round;
 
-const GRAVITY: f32 = -9.8;
+const GRAVITY: f32 = 9.8;
 
 #[derive(Debug, Clone, PartialEq)]
 pub struct Object {
@@ -43,17 +43,17 @@ impl Iterator for ThrowObject {
         self.time += 1.0; // Update Time
 
         // Update Vertical Velocity.
-        self.actual_velocity.y = round(self.init_velocity.y + GRAVITY * self.time);
+        self.actual_velocity.y = round(self.init_velocity.y - GRAVITY * self.time);
 
         // Calculate Position.
         self.actual_position.x =
             self.init_position.x
                 + self.init_velocity.x * self.time
-                + 0.5 * 1.0 * self.time.powf(2.0);
+                + 0.5 * self.time.powf(2.0);
         self.actual_position.y = round(
             self.init_position.y
                 + self.init_velocity.y * self.time
-                + 0.5 * GRAVITY * self.time.powf(2.0),
+                - 0.5 * GRAVITY * self.time.powf(2.0),
         );
 
         // Check if the object has reached the ground.
