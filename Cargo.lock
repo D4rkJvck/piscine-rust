@@ -627,6 +627,10 @@ name = "simple_hash"
 version = "0.1.0"
 
 [[package]]
+name = "slices_to_map"
+version = "0.1.0"
+
+[[package]]
 name = "speed_transformation"
 version = "0.1.0"
 

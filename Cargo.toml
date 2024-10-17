@@ -112,6 +112,6 @@ members = [
 
     # FEATURES
     "closures",
-    "sales", "adding", "adding_twice", "get_products", "highest", "iterators", "roman_numbers_iter",
+    "sales", "adding", "adding_twice", "get_products", "highest", "iterators", "roman_numbers_iter", "slices_to_map",
 ]
 resolver = "2"
