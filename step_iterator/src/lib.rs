@@ -1,4 +1,4 @@
-use std::{fmt::Display, iter::Iterator, ops::AddAssign};
+use std::{iter::Iterator, ops::AddAssign};
 
 pub struct StepIterator<T> {
     beg: T,
