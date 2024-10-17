@@ -422,6 +422,10 @@ name = "macro_map"
 version = "0.1.0"
 
 [[package]]
+name = "markdown_to_html"
+version = "0.1.0"
+
+[[package]]
 name = "matrix"
 version = "0.1.0"
 dependencies = [
