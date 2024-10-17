@@ -43,7 +43,7 @@ impl Iterator for ThrowObject {
         self.time += 1.0; // Update Time
 
         // Update Velocity.
-        self.actual_velocity.x = self.init_velocity.x * self.time;
+        self.actual_velocity.x = self.init_velocity.x + 1.0 * self.time;
         self.actual_velocity.y = round(self.init_velocity.y + GRAVITY * self.time);
 
         // Calculate Position.
