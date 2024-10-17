@@ -24,11 +24,6 @@ impl<'a> Numbers<'a> {
         let mut top_3 = self.numbers.to_owned();
         top_3.sort();
 
-        top_3
-            .iter()
-            .rev()
-            .take(3)
-            .copied()
-            .collect()
+        top_3.iter().rev().take(3).copied().collect()
     }
 }

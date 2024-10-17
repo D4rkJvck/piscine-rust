@@ -18,7 +18,6 @@ fn main() {
     println!("The value is {}", value(7));
 }
 
-
 // $ cargo run
 // The value is 27
 // The value is 47

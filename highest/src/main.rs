@@ -9,7 +9,6 @@ fn main() {
     println!("{:?}", n.highest_three());
 }
 
-
 // $ cargo run
 // [30, 500, 20, 70]
 // Some(500)

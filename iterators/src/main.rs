@@ -10,7 +10,6 @@ fn main() {
     println!("{:?}", collatz(12));
 }
 
-
 // $ cargo run
 // 0
 // 0
