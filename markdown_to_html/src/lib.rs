@@ -44,7 +44,7 @@ pub fn markdown_to_html(s: &str) -> String {
         .split("*")
         .collect::<Vec<&str>>()
         .join("<em>")
-        .split(" ")
+        .split(' ')
         .map(|word| {
             let mut transformed_word = String::from(word);
 
