@@ -46,14 +46,14 @@ pub fn markdown_to_html(s: &str) -> String {
         .join("<em>")
         .split(" ")
         .map(|word| {
-            let mut transformed_word = String::from(word); // Create a new String
+            let mut transformed_word = String::from(word);
 
             if transformed_word.ends_with("<strong>") {
-                transformed_word.truncate(transformed_word.len() - 8); // Remove "<strong>"
-                transformed_word.push_str("</strong>"); // Add "</strong>"
+                transformed_word.truncate(transformed_word.len() - 8);
+                transformed_word.push_str("</strong>");
             } else if transformed_word.ends_with("<em>") {
-                transformed_word.truncate(transformed_word.len() - 4); // Remove "<em>"
-                transformed_word.push_str("</em>"); // Add "</em>"
+                transformed_word.truncate(transformed_word.len() - 4);
+                transformed_word.push_str("</em>");
             }
 
             transformed_word // Return the new String
