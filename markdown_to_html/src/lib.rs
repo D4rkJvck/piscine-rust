@@ -9,10 +9,13 @@ pub fn markdown_to_html(s: &str) -> String {
             continue;
         }
 
+        html.push_str(&get_leading_whitespace(line));
+
         let words: Vec<&str> = line.split_whitespace().collect();
 
         if words.len() < 2 {
             html.push_str(&words[0]);
+            html.push('\n');
             continue;
         }
 
@@ -43,6 +46,12 @@ pub fn markdown_to_html(s: &str) -> String {
         .join("<em>");
 
     html
+}
+
+//----------------------------------------------------------------
+
+fn get_leading_whitespace(s: &str) -> String {
+    s.chars().take_while(|c| c.is_whitespace()).collect()
 }
 
 fn heading(i: usize, text: &str) -> String {
